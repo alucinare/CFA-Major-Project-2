@@ -12,6 +12,7 @@
   <h1><%= @chatroom.topic %></h1>
 
   <div class="panel panel-default">
+    <p>this is the section for the messages<p>
     <% if @chatroom.messages.any? %>
       <div class="panel-body" id="messages">
         <%= render partial: 'messages/message', collection: @chatroom.messages%>
