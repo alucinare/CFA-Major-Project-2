@@ -1,5 +1,15 @@
 Rails.application.routes.draw do
+
+  get 'registrations/new'
+
   root 'pages#index'
+
+  get '/signup', to: "registrations#new"
+  post '/signup', to: "registrations#create"
+
+  get 'login', to: "sessions#new"
+  post '/login', to: "sessions#create"
+  delete '/logout', to: "sessions#destroy"
 
   resources :messages
   resources :chatrooms
