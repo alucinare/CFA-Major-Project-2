@@ -1,0 +1,9 @@
+<% if flash.notice %>
+  <div class="alert alert-danger">
+      <% flash.notice.each do |type, messages|%>
+        <i class="large material-icons" aria-hidden="true">thumb_down</i><%messages.each do |msg|%>
+          <%=type%> <%=msg%>
+        <%end%>
+      <%end%>
+  </div>
+<%end%>

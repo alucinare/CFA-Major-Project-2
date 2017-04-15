@@ -37,3 +37,9 @@ Has many through: http://guides.rubyonrails.org/association_basics.html#the-has-
 
 Another example is the relationship of a car to an engine to pistons. An car has one engine which belongs to the car. The engine has many pistons which belong to the engine. A car has many pistons through the engine and the pistons have one car through the engine.
 IN PRACTICE we just call car.pistons INSTEAD OF car.engine.pistons
+
+
+FORM_FOR authenticity_token and remote
+https://apidock.com/rails/ActionView/Helpers/FormHelper/form_for
+Are passing custom authenticity_token?? That's what it is used for
+remote: this is set to true so the Unobstrusive JS drivers are controlling the behaviour of submit, has something to do with ajax - not sure what that really means.... may have to look into JS later on and/or

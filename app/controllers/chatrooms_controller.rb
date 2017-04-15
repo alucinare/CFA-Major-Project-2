@@ -4,21 +4,28 @@ class ChatroomsController < ApplicationController
   # GET /chatrooms
   # GET /chatrooms.json
   def index
+    @chatroom = Chatroom.new
     @chatrooms = Chatroom.all
   end
 
   # GET /chatrooms/1
   # GET /chatrooms/1.json
   def show
+    @chatroom = Chatroom.find_by(slug: params[:slug])
+    @message = Message.new
   end
 
   # GET /chatrooms/new
   def new
+    if request.referrer.split("/").last == "chatrooms"
+    flash[:notice] = nil
+    end
     @chatroom = Chatroom.new
   end
 
   # GET /chatrooms/1/edit
   def edit
+    @chatroom = Chatroom.find_by(slug: params[:slug])
   end
 
   # POST /chatrooms
@@ -31,6 +38,7 @@ class ChatroomsController < ApplicationController
         format.html { redirect_to @chatroom, notice: 'Chatroom was successfully created.' }
         format.json { render :show, status: :created, location: @chatroom }
       else
+        flash[:notice] = {error: ["a chatroom with this topic already exists"]}
         format.html { render :new }
         format.json { render json: @chatroom.errors, status: :unprocessable_entity }
       end
@@ -40,6 +48,8 @@ class ChatroomsController < ApplicationController
   # PATCH/PUT /chatrooms/1
   # PATCH/PUT /chatrooms/1.json
   def update
+    @chatroom = Chatroom.find_by(slug: params[:slug])
+
     respond_to do |format|
       if @chatroom.update(chatroom_params)
         format.html { redirect_to @chatroom, notice: 'Chatroom was successfully updated.' }

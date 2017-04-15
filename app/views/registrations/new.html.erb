@@ -5,10 +5,12 @@
     <div class="auth-form well">
     <%= form_for(User.new, url: signup_path) do |f| %>
 
-      <%=f.label :username%>
-      <div class="input-group">
-        <span class="input-group-addon">@</span>
-          <%= f.text_field :username, class: "form-control"%>
+    <i class="large material-icons">perm_identity</i>
+      <div class="container">
+        <%=f.label :username%>
+        <div class="input-group">
+            <%= f.text_field :username, class: "form-control"%>
+        </div>
       </div>
 
       <div class="actions">
@@ -17,6 +19,6 @@
     <% end %>
     </div>
 
-      <%= render partial: 'layouts/flash_errors'%>
+      <%= render 'partials/flash_errors'%>
   </div>
 </div>

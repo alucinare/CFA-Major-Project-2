@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   get 'registrations/new'
 
   root 'pages#index'
