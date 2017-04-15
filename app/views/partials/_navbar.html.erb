@@ -1,0 +1,18 @@
+<nav>
+    <div class="nav-wrapper">
+      <span class="brand-logo"><%= link_to "Logo", root_path %></span>
+      <a href="#" data-activates="mobile-demo" class="button-collapse right"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><%= link_to "Chatrooms", chatrooms_path %></li>
+        <li><%= link_to "New Room", new_chatroom_path %></li>
+        <li><a href="collapsible.html">Javascript</a></li>
+        <li><a href="mobile.html">Mobile</a></li>
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
+        <li><a href="sass.html">Sass</a></li>
+        <li><a href="badges.html">Components</a></li>
+        <li><a href="collapsible.html">Javascript</a></li>
+        <li><a href="mobile.html">Mobile</a></li>
+      </ul>
+    </div>
+  </nav>

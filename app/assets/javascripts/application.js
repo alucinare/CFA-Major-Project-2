@@ -13,6 +13,12 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
 //= require materialize-sprockets
+//= require_tree .
 //= require materialize/extras/nouislider
+
+$(document).on('turbolinks:load', function(){
+  $('.button-collapse').sideNav();
+  $('#modal1').modal();
+  $('select').material_select();
+});
