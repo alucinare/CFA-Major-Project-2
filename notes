@@ -1,3 +1,5 @@
+ENTITY RELATIONSHIP DIAGRAM
+
       User
         |
         |
@@ -15,6 +17,7 @@
                                   |
                                   |---^--Messages
 
+MODEL RELATIONSHIPS
 
 User
 has_many :messages
@@ -27,3 +30,10 @@ belongs_to :user
 Chatroom
 has_many :messages, dependent: :destroy
 has_many :users, through: :messages
+
+SUMMARY OF "through:" relationships
+
+Has many through: http://guides.rubyonrails.org/association_basics.html#the-has-many-through-association this is an association of one model with another model through a third model. In this case it's a many-to-many association. An example given by Rails Guides is physician has_many appointments AND has_many patients while a patient has_many appointments and has_many physicians. The third model is the appointment which belongs_to physician AND patient while the physician has_many patients through: appointments and the the patient has_many physicians through: appointments.
+
+Another example is the relationship of a car to an engine to pistons. An car has one engine which belongs to the car. The engine has many pistons which belong to the engine. A car has many pistons through the engine and the pistons have one car through the engine.
+IN PRACTICE we just call car.pistons INSTEAD OF car.engine.pistons
