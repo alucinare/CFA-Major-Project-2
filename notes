@@ -1,0 +1,29 @@
+      User
+        |
+        |
+ |------|-------------|
+ |                    |
+ //                   //         |----Users (through Messages)
+ |                    |          |
+ |                    |          //
+ |                    |          |
+ |                    |          |
+ |---^--Messages      |---^--Chatroom/s (through Messages)
+                                  |
+                                  |
+                                  //
+                                  |
+                                  |---^--Messages
+
+
+User
+has_many :messages
+has_many :chatrooms, through: :messages
+
+Message
+belongs_to :chatroom
+belongs_to :user
+
+Chatroom
+has_many :messages, dependent: :destroy
+has_many :users, through: :messages
