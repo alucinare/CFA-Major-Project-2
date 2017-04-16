@@ -72,3 +72,6 @@ App.cable.subscriptions.create
   {return "<p> <b>" + data.user + ": </b>" + data.message + "</p>";}
 }
 );
+
+//= require materialize/extras/nouislider
+// = require materialize-sprockets

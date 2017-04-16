@@ -13,13 +13,20 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require materialize-sprockets
 //= require_tree .
 //= require materialize/extras/nouislider
+// = require materialize-sprockets
 //= require_tree ./channels
+//= require chatrooms
 
 $(document).on('turbolinks:load', function(){
   $('.button-collapse').sideNav();
   // $('#modal1').modal();
   // $('select').material_select();
 });
+
+// $("#text_area").keypress(function(e){
+//       if(e.which == 13){
+//            $(this).closest('form').submit();
+//        }
+//     });
