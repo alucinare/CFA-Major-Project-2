@@ -16,6 +16,7 @@
 //= require materialize-sprockets
 //= require_tree .
 //= require materialize/extras/nouislider
+//= require_tree ./channels
 
 $(document).on('turbolinks:load', function(){
   $('.button-collapse').sideNav();

@@ -13,12 +13,12 @@
 
   <div class="input-field">
     <%= f.label :your_message %>
-    <%= f.text_area :content  %>
+    <%= f.text_area :content, data: {textarea: "message"}  %>
   </div>
 
   <%= f.hidden_field :chatroom_id, value: chatroom.id %>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "send", data: {send: "message"}%>
   </div>
 <% end %>

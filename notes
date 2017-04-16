@@ -42,4 +42,33 @@ IN PRACTICE we just call car.pistons INSTEAD OF car.engine.pistons
 FORM_FOR authenticity_token and remote
 https://apidock.com/rails/ActionView/Helpers/FormHelper/form_for
 Are passing custom authenticity_token?? That's what it is used for
-remote: this is set to true so the Unobstrusive JS drivers are controlling the behaviour of submit, has something to do with ajax - not sure what that really means.... may have to look into JS later on and/or
+remote: this is set to true so the Unobstrusive JS drivers are controlling the behaviour of submit, has something to do with ajax - not sure what that really means.... may have to look into JS later on
+
+
+ACTION CABLE
+The Connection class is where we would authorize the incoming connection—for example, establishing a channel to a given user’s inbox, which requires user authorization. We don't need this for our application as any user can join a chat at anytime.
+The Channel class is for any shared logic amongst any of the channels that we have created, however, we'll only be created one channel - the message channel - and will not need to alter this.
+
+Three main steps in which there are sub-steps:
+- Estabilshing the websocket Connection
+  - server side WS Connection
+  - client side WS Connection
+- Building the Action cable channel
+  - Define the AC channel
+  - Broadcast the AC channel
+  - Redis the AC channel
+    - this is a pretty important component as the server broadcasts messages to this and the subscribed streams messages over the 'messages' channel maintained by redis.
+- Defining the ACtion cable channel's subscriber
+  -
+
+
+App.messages =
+App.cable.subscriptions.create
+('MessagesChannel',
+{
+  received: function(data)
+  {$("#messages").removeClass('hidden') return $('#messages').append(this.renderMessage(data));},
+  renderMessage: function(data)
+  {return "<p> <b>" + data.user + ": </b>" + data.message + "</p>";}
+}
+);
