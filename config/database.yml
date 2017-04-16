@@ -1,4 +1,4 @@
-# PostgreSQL. Versions 9.1 and up are supported.
+  # PostgreSQL. Versions 9.1 and up are supported.
 #
 # Install the pg driver:
 #   gem install pg
@@ -23,13 +23,13 @@ default: &default
 
 development:
   <<: *default
-  database: enguage_development
+  database: chatty_development
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
   # the same name as the operating system user that initialized the database.
-  #username: enguage
+  #username: chatty
 
   # The password associated with the postgres role (username).
   #password:
@@ -57,7 +57,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: enguage_test
+  database: chatty_test
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -80,6 +80,6 @@ test:
 #
 production:
   <<: *default
-  database: enguage_production
-  username: enguage
-  password: <%= ENV['ENGUAGE_DATABASE_PASSWORD'] %>
+  database: chatty_production
+  username: chatty
+  password: <%= ENV['CHATTY_DATABASE_PASSWORD'] %>
