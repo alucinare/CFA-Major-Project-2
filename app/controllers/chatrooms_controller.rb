@@ -1,5 +1,6 @@
 class ChatroomsController < ApplicationController
 
+
   def index
     @chatroom = Chatroom.new
     @chatrooms = Chatroom.all
@@ -18,7 +19,7 @@ class ChatroomsController < ApplicationController
 
   def create
     @chatroom = Chatroom.new(chatroom_params)
-    
+
     if @chatroom.save
       respond_to do |format|
         format.html { redirect_to @chatroom }
@@ -45,6 +46,8 @@ class ChatroomsController < ApplicationController
   end
 
   private
+
+
 
     def chatroom_params
       params.require(:chatroom).permit(:topic)
