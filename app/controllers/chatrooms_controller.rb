@@ -26,6 +26,11 @@ class ChatroomsController < ApplicationController
     puts @enguage.inspect
     @enguage.article = params[:article]
     puts @enguage.inspect
+    puts @chatroom.topic
+    @enguage.user_id = 1
+    @enguage.chatroom_id = 15
+    puts @enguage.inspect
+    @enguage.save(validate: false)
 
     if @chatroom.save && @enguage.save
       respond_to do |format|
