@@ -20,6 +20,7 @@ class ChatroomsController < ApplicationController
 
   def create
     @chatroom = Chatroom.new(chatroom_params)
+    @chatroom.save
     @enguage = Enguage.new
     puts @enguage.inspect
     @enguage.discussion = params[:discussion]
@@ -27,12 +28,13 @@ class ChatroomsController < ApplicationController
     @enguage.article = params[:article]
     puts @enguage.inspect
     puts @chatroom.topic
-    @enguage.user_id = 1
-    @enguage.chatroom_id = 15
+    puts current_user.id.inspect
+    @enguage.user_id = current_user.id
+    @enguage.chatroom_id = @chatroom.id
     puts @enguage.inspect
-    @enguage.save(validate: false)
 
-    if @chatroom.save && @enguage.save
+
+    if @enguage.save
       respond_to do |format|
         format.html { redirect_to chatroom_path(@chatroom) }
         format.js
