@@ -1,5 +1,5 @@
 class ChatroomsController < ApplicationController
-
+  before_action :set_chatroom, only: [:show, :edit, :update]
 
   def index
     @chatroom = Chatroom.new
@@ -15,23 +15,16 @@ class ChatroomsController < ApplicationController
   end
 
   def edit
-    @chatroom = Chatroom.find_by(slug: params[:slug])
   end
 
   def create
     @chatroom = Chatroom.new(chatroom_params)
     @chatroom.save
     @enguage = Enguage.new
-    puts @enguage.inspect
     @enguage.discussion = params[:discussion]
-    puts @enguage.inspect
     @enguage.article = params[:article]
-    puts @enguage.inspect
-    puts @chatroom.topic
-    puts current_user.id.inspect
     @enguage.user_id = current_user.id
     @enguage.chatroom_id = @chatroom.id
-    puts @enguage.inspect
 
 
     if @enguage.save
@@ -49,17 +42,19 @@ class ChatroomsController < ApplicationController
   end
 
   def update
-    chatroom = Chatroom.find_by(slug: params[:slug])
     chatroom.update(chatroom_params)
     redirect_to chatroom
   end
 
   def show
-    @chatroom = Chatroom.find_by(slug: params[:slug])
     @message = Message.new
   end
 
   private
+
+    def set_chatroom
+      @chatroom = Chatroom.find_by(slug: params[:slug])
+    end
 
     def chatroom_params
       params.require(:chatroom).permit(:topic)

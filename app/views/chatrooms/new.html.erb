@@ -11,14 +11,14 @@
           <%= f.submit class: "btn btn-primary", id: "create-chatroom" %>
           <p> Do you agree or disagree with the article? </p>
           <%= label_tag(:article, "Argree") %>
-          <%= radio_button_tag(:article, "true") %>
+          <%= radio_button_tag(:article, true) %>
           <%= label_tag(:article, "Disargree") %>
-          <%= radio_button_tag(:article, "false") %><br />
+          <%= radio_button_tag(:article, false) %><br />
           <p> Do you want to discuss with someone who agrees or disagrees with the article?</p>
           <%= label_tag(:discussion, "Argrees") %>
-          <%= radio_button_tag(:discussion, "true") %>
+          <%= radio_button_tag(:discussion, true) %>
           <%= label_tag(:discussion, "Disargrees") %>
-          <%= radio_button_tag(:discussion, "false") %><br />
+          <%= radio_button_tag(:discussion, false) %><br />
         <% end %><br />
 
       </div>
