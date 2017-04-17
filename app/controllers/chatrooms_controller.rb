@@ -7,6 +7,7 @@ class ChatroomsController < ApplicationController
   end
 
   def new
+    @enguage = Enguage.new
     if request.referrer.split("/").last == "chatrooms"
       flash[:notice] = nil
     end
@@ -19,10 +20,16 @@ class ChatroomsController < ApplicationController
 
   def create
     @chatroom = Chatroom.new(chatroom_params)
+    @enguage = Enguage.new
+    puts @enguage.inspect
+    @enguage.discussion = params[:discussion]
+    puts @enguage.inspect
+    @enguage.article = params[:article]
+    puts @enguage.inspect
 
-    if @chatroom.save
+    if @chatroom.save && @enguage.save
       respond_to do |format|
-        format.html { redirect_to @chatroom }
+        format.html { redirect_to chatroom_path(@chatroom) }
         format.js
       end
     else
@@ -46,8 +53,6 @@ class ChatroomsController < ApplicationController
   end
 
   private
-
-
 
     def chatroom_params
       params.require(:chatroom).permit(:topic)

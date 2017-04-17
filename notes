@@ -64,6 +64,13 @@ Three main steps in which there are sub-steps:
   -
 
 
+Interesting code for moving through a hash
+<% nations = { 'United States of America' => 'USA', 'Canada' => 'Canada', 'Mexico'=> 'Mexico', 'United Kingdom' => 'UK' }%>  <p>    <b>Country</b><br />
+
+<% list = nations.sort       list.each {|x| %>        <%= f.radio_button :country, x[1] %> <%= h(x[0]) %><br />    <% } %>  </p>
+
+the h(x[0]) is the interesting part
+
 App.messages =
 App.cable.subscriptions.create
 ('MessagesChannel',
