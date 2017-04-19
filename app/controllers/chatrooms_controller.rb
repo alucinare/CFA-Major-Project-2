@@ -24,28 +24,19 @@ class ChatroomsController < ApplicationController
     @connect.article = params[:article]
     @connect.discussion = params[:discussion]
     @connect.user_id = current_user.id
-    @connect.chatroom_id = @chatroom.id
+    @connect.topic = params[:chatroom][:topic]
+    article_params = params[:chatroom][:topic]
 
-    puts @connect.inspect
+    chatroom_obj = Chatroom.where(:topic => article_params)
 
-    # puts current_user.connects[0].chatroom_id.inspect
-    puts current_user.connects[0].inspect
-    puts current_user.connects.inspect
-    puts current_user.inspect
-    #chatroom_id = 37 #Chatroom.find(params[:id])
-
-
-    if @connect.save
+    if @connect.save && @connect.topic == chatroom_obj[0].topic
       respond_to do |format|
-        format.html { redirect_to chatroom_path(@chatroom) }
+        format.html { redirect_to chatroom_path(chatroom_obj[0].slug) }
         format.js
       end
     else
       respond_to do |format|
-        if current_user.connects[0].chatroom_id == 37
-          redirect_to chatroom_path(chatroom_id.id)
-        end
-        flash[:notice] = {error: ["a chatroom with this topic already exists"]}
+        flash[:notice] = {error: ["To better Engauge you, please select from the options below and enter article link."]}
         format.html { redirect_to new_chatroom_path }
         format.js { render template: 'chatrooms/chatroom_error.js.erb'}
       end
