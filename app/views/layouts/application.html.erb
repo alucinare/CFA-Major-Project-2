@@ -4,6 +4,7 @@
     <title>Chatty</title>
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
+    
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => 'reload' %>
@@ -12,12 +13,13 @@
   </head>
 
   <body>
-   <a class="github-fork-ribbon right-bottom fixed" href="https://github.com/sophiedebenedetto/action-cable-example" title="Fork me on GitHub">Fork me on GitHub</a>
-  <%= render partial: 'layouts/navbar' %>
 
   <div class="container">
+  <%= render partial: 'partials/header' %>
+  <%= render partial: 'partials/navbar' %>
+
+
     <%= yield %>
   </div>
   </body>
 </html>
-

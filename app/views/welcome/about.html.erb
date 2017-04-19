@@ -1,11 +1,29 @@
-<div class="jumbotron">
-  <h1>Welcome to Engauge</h1>
-  <p>Enter an article link below and choose if you agreed or disagree with it</p>
-
-  <%= render 'chatrooms/chatroom_form', locals: {chatroom: @chatroom} %>
-
-  <%if current_user%>
-    <p><span class="glyphicon glyphicon-heart"></span> Nice to see you, <%= current_user.username%> <span class="glyphicon glyphicon-heart"></span></p>
-  <%end%>
-  <p>Sign up or log in, then create a chatroom or browse existing rooms to start chatting.</p>
+<div class="row">
+  <div class="col-md-4">
+    <div class="panel panel-default bootcards-media">
+      <div class="panel-heading">....</div>
+      <div class="panel-body"> ... </div>
+        <img src="http://www.linkofphoto.com/path"/>
+      <div class="panel-footer">
+        <button type="button" class="btn btn-success">AGREE</button>
+        <button type="button" class="btn btn-danger">DISAGREE</button>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="panel panel-default bootcards-media">
+      <div class="panel-heading">....</div>
+      <div class="panel-body"> ... </div>
+        <img src="http://www.linkofphoto.com/path"/>
+      <div class="panel-footer">...</div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="panel panel-default bootcards-media">
+      <div class="panel-heading">....</div>
+      <div class="panel-body"> ... </div>
+        <img src="http://www.linkofphoto.com/path"/>
+      <div class="panel-footer">...</div>
+    </div>
+  </div>
 </div>

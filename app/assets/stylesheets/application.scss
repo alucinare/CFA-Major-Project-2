@@ -19,7 +19,11 @@
  @import "messages";
  @import "users";
 
+h1 {
+  font-weight: bold;
+}
 
- .github-fork-ribbon.right-bottom:before {
-     background-color: black;
- }
+.header {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
