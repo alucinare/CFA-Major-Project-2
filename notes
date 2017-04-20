@@ -257,3 +257,13 @@ App.cable.subscriptions.create
 
 //= require materialize/extras/nouislider
 // = require materialize-sprockets
+
+
+<button type="button" class="btn btn-default navbar-btn">
+ <li>
+  <%= link_to "chatrooms", chatrooms_path, class: "btn navbar-btn", type: "button" %>
+ </li>
+</button>
+<button>
+  <%= link_to "chatrooms", chatrooms_path, class: "btn navbar-btn", type: "button"  %>
+</button>

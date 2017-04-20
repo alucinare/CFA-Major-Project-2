@@ -12,10 +12,28 @@
       <div class="panel-footer dl-horizontal">
         <div class="row">
           <div class="col-md-6">
+            <%= button_to 'Agree', chatrooms_path, method: :post, params: { topic: "chatroom 1", article: "Agree" }, class: "btn btn-success center-block" %>
+          </div>
+          <div class="col-md-6">
+            <%= button_to 'Disagree', chatrooms_path, method: :post, params: { topic: "chatroom 1", article: "Disagree" }, class: "btn btn-danger center-block" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="panel panel-default bootcards-media">
+      <div class="panel-heading">
+        <h5>Killa Killed in Prison, Ultimate Justice?</h5>
+      </div>
+      <div class="panel-body">
+        <%= image_tag("killa_killed.jpg", class: "thumbnail image-row") %>
+      </div>
+      <div class="panel-footer dl-horizontal">
+        <div class="row">
+          <div class="col-md-6">
             <button class="btn btn-success center-block">Agree</button>
-            <%= button_to 'Agree', chatrooms_path, method: :post, params: { topic: "chatroom 1", article: true }, class: "btn btn-success center-block" %>
-
-
+            <%= button_to 'Agree', chatrooms_path, method: :post, params: { topic: "chatroom 2", article: true }, class: "btn btn-success center-block" %>
           </div>
           <div class="col-md-6">
             <button class="btn btn-danger">Disagree</button>
@@ -59,58 +77,10 @@
           </div>
           <div class="col-md-6">
             <button class="btn btn-danger">Disagree</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-3">
-    <div class="panel panel-default bootcards-media">
-      <div class="panel-heading">
-        <h5>Killa Killed in Prison, Ultimate Justice?</h5>
-      </div>
-      <div class="panel-body">
-        <%= image_tag("killa_killed.jpg", class: "thumbnail image-row") %>
-      </div>
-      <div class="panel-footer dl-horizontal">
-        <div class="row">
-          <div class="col-md-6">
-            <button class="btn btn-success center-block">Agree</button>
-          </div>
-          <div class="col-md-6">
-            <button class="btn btn-danger">Disagree</button>
 
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
-<div class="row col-md-8 col-md-offset-2">
-
-  <h1>Enter an article to discuss!</h1>
-    <div class="well">
-      <div class="chatroom-form">
-        <%= form_for @chatroom do |f| %>
-          <div class="input-group">
-            <span class="input-group-addon">topic:</span>
-            <%= f.text_field :topic, class: "form-control"%>
-          </div>
-          <%= f.submit class: "btn btn-primary", id: "create-chatroom" %>
-          <p> Do you agree or disagree with the article? </p>
-          <%= label_tag(:article, "Argree") %>
-          <%= radio_button_tag(:article, true) %>
-          <%= label_tag(:article, "Disargree") %>
-          <%= radio_button_tag(:article, false) %><br />
-          <p> Do you want to discuss with someone who agrees or disagrees with the article?</p>
-          <%= label_tag(:discussion, "Argrees") %>
-          <%= radio_button_tag(:discussion, true) %>
-          <%= label_tag(:discussion, "Disargrees") %>
-          <%= radio_button_tag(:discussion, false) %><br />
-        <% end %><br />
-
-      </div>
-    </div>
-
-    <%= render partial: 'layouts/flash_errors'%>
 </div>

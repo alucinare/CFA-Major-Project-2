@@ -20,17 +20,22 @@ class ChatroomsController < ApplicationController
   def create
     @chatroom = Chatroom.new#(chatroom_params)
     @chatroom.topic = params[:topic]
-    @chatroom.save
+    topic = params[:topic]
     @connect = Connect.new
     @connect.article = params[:article]
-    @connect.discussion = 1 #params[:discussion]
     @connect.user_id = current_user.id
-    @connect.topic = params[:topic]
+    @connect.save
+    # @connect.topic = params[:topic]
     article_params = params[:topic]
 
     chatroom_obj = Chatroom.where(:topic => article_params)
 
-    if @connect.save && @connect.topic == chatroom_obj[0].topic
+    if @chatroom.save
+      respond_to do |format|
+        format.html { redirect_to chatroom_path(chatroom_obj[0].slug) }
+        format.js
+      end
+    elsif @chatroom.topic == topic #@connect.save && @connect.topic == chatroom_obj[0].topic
       respond_to do |format|
         format.html { redirect_to chatroom_path(chatroom_obj[0].slug) }
         format.js
@@ -51,6 +56,7 @@ class ChatroomsController < ApplicationController
 
   def show
     @message = Message.new
+    @connect = Connect.find(1)
   end
 
   private
