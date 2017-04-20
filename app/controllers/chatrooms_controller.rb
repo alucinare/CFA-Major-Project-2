@@ -18,14 +18,15 @@ class ChatroomsController < ApplicationController
   end
 
   def create
-    @chatroom = Chatroom.new(chatroom_params)
+    @chatroom = Chatroom.new#(chatroom_params)
+    @chatroom.topic = params[:topic]
     @chatroom.save
     @connect = Connect.new
     @connect.article = params[:article]
-    @connect.discussion = params[:discussion]
+    @connect.discussion = 1 #params[:discussion]
     @connect.user_id = current_user.id
-    @connect.topic = params[:chatroom][:topic]
-    article_params = params[:chatroom][:topic]
+    @connect.topic = params[:topic]
+    article_params = params[:topic]
 
     chatroom_obj = Chatroom.where(:topic => article_params)
 
