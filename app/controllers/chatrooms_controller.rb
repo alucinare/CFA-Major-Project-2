@@ -33,13 +33,11 @@ class ChatroomsController < ApplicationController
     topic = params[:topic]
 
     if if_saved
-      puts "if_saved"
       respond_to do |format|
         format.html { redirect_to @chatroom }
         format.js
       end
     elsif @chatroom.topic == topic #@connect.save && @connect.topic == chatroom_obj[0].topic
-      puts "if not saved"
       respond_to do |format|
         format.html { redirect_to chatroom_path(chatroom_obj[0].slug) }
         format.js
@@ -60,6 +58,7 @@ class ChatroomsController < ApplicationController
 
   def show
     @message = Message.new
+
     @connect = Connect.find_by(params[:chatroom_id])
     puts @connect.inspect
     @user = current_user
