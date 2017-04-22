@@ -1,15 +1,25 @@
-App.messages = App.cable.subscriptions.create('MessagesChannel', {  
+App.messages = App.cable.subscriptions.create('MessagesChannel', {
   received: function(data) {
+    // apparently I don't need the #messages below, it was working with something else
     $("#messages").removeClass('hidden')
     return $('#messages').append(this.renderMessage(data));
   },
   renderMessage: function(data) {
-    return "<p> <b>" + data.user + ": </b>" + data.message + "</p>";
+    discuss = data.connect
+    if (discuss = "Agree") {
+      discuss = discuss.fontcolor("green");
+    } else {
+      discuss = discuss.fontcolor("red");
+    }
+
+    return "<p> <b>" + data.user + "</b>" + "(" + discuss + ")" + ": " + data.message + "</p>";
   }
 });
 
+
 // jQuery(document).on('turbolinks:load', function() {
 //   var messages, messages_to_bottom;
+//
 //   messages = $('#messages');
 //   if ($('#messages').length > 0) {
 //     messages_to_bottom = function() {

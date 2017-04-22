@@ -3,6 +3,7 @@
 
 <div class="panel panel-default">
   <% if @chatroom.messages.any? %>
+  <!--  the JS will not work without the messages ID-->
     <div class="panel-body" id="messages">
       <%= render partial: 'messages/message', collection: @chatroom.messages, locals: {connect: @connect} %>
     </div>
@@ -13,5 +14,5 @@
 </div>
 
 
-  <%= render partial: 'messages/message_form', locals: {message: @message, chatroom: @chatroom}%>
+  <%= render partial: 'messages/message_form', locals: {message: @message, chatroom: @chatroom, connect: @connect}%>
 </div>

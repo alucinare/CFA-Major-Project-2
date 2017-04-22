@@ -1,3 +1,9 @@
 <!-- this doesn't work as it'll only hide the message if the browser refreshes if message.user.username == "TestSee" %> -->
-<p><strong><%=message.user.username%><%=current_user.connects[0].article%>:</strong> <%=message.content%></p>
-<!-- end %> -->
+<!-- Perhaps I can hide old messages with this? -->
+<!--  this is to only display messages that have alredy been saved in the database.-->
+<!--  TO DO - I have to change this so it will show the appropriate value of the connects and not just teh same one, I have to change the connects[0] to something else -->
+<% if current_user.connects[0].article == "Agree" %>
+  <p><strong><%=message.user.username%></strong>(<span class="agree"><%=current_user.connects[0].article%></span>):  <%=message.content%></p>
+<% else %>
+  <p><strong><%=message.user.username%></strong>(<span class="disagree"><%=current_user.connects[0].article%></span>):  <%=message.content%></p>
+<% end %>
