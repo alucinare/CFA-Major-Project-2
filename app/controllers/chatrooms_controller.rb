@@ -57,6 +57,8 @@ class ChatroomsController < ApplicationController
   end
 
   def show
+    @object = LinkThumbnailer.generate('http://www.smh.com.au/federal-politics/political-opinion/north-korean-threats-will-leave-alliance-countries-little-choice-20170423-gvqpxh.html')
+    
     @message = Message.new
 
     @connect = Connect.find_by(params[:chatroom_id])
