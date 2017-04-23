@@ -1,0 +1,93 @@
+<!-- I want to make this into a loop so it can get the values of the chatroom from an array instead of hardcoded in here, plus thinking in terms of DRY!! -->
+
+<div class="row">
+  <div class="col-md-3">
+    <div class="panel panel-default bootcards-media">
+      <div class="panel-heading">
+        <h5>Killa Killed in Prison, Ultimate Justice?</h5>
+      </div>
+      <div class="panel-body">
+        <a href="http://www.smh.com.au/sport/us-sports/aaron-hernandez-was-no-innocent-bystander-in-a-bloodstained-life-20170419-gvo7nw.html">
+           <%= image_tag("killa_killed.jpg", class: "thumbnail image-row") %>
+        </a>
+      </div>
+      <div class="panel-footer dl-horizontal">
+        <div class="row">
+          <div class="col-md-6">
+            <%= button_to 'Agree', chatrooms_path, method: :post, params: { topic: "chatroom 1", article: "Agree" }, class: "btn btn-success center-block" %>
+          </div>
+          <div class="col-md-6">
+            <%= button_to 'Disagree', chatrooms_path, method: :post, params: { topic: "chatroom 1", article: "Disagree" }, class: "btn btn-danger center-block" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="panel panel-default bootcards-media">
+      <div class="panel-heading">
+        <h5>Killa Killed in Prison, Ultimate Justice?</h5>
+      </div>
+      <div class="panel-body">
+        <%= image_tag("killa_killed.jpg", class: "thumbnail image-row") %>
+      </div>
+      <div class="panel-footer dl-horizontal">
+        <div class="row">
+          <div class="col-md-6">
+            <%= button_to 'Agree', chatrooms_path, method: :post, params: { topic: "chatroom 2", article: "Agree" }, class: "btn btn-success center-block" %>
+          </div>
+          <div class="col-md-6">
+            <%= button_to 'Disagree', chatrooms_path, method: :post, params: { topic: "chatroom 2", article: "Disagree" }, class: "btn btn-danger center-block" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="panel panel-default bootcards-media">
+      <div class="panel-heading">
+        <h5>Killa Killed in Prison, Ultimate Justice?</h5>
+      </div>
+      <div class="panel-body">
+        <%= image_tag("killa_killed.jpg", class: "thumbnail image-row") %>
+      </div>
+      <div class="panel-footer dl-horizontal">
+        <div class="row">
+          <!-- this doesn't work for 2 submit buttons -->
+          <%= form_for @chatroom do |f| %>
+            <%= f.hidden_field :topic, value: "chatroom 5"%>
+          <div class="col-md-6">
+            <%= f.submit class: "btn btn-success center-block", id: "create-chatroom", value: "Agree", params: { article: "Agree"} %>
+            <!-- <button class="btn btn-success center-block">Agree</button> -->
+          </div>
+          <div class="col-md-6">
+            <%= f.submit class: "btn btn-danger center-block", id: "create-chatroom", value: "Disagree", params: { article: "Disagree"} %>
+            <!-- <button class="btn btn-danger">Disagree</button> -->
+          </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="panel panel-default bootcards-media">
+      <div class="panel-heading">
+        <h5>Killa Killed in Prison, Ultimate Justice?</h5>
+      </div>
+      <div class="panel-body">
+        <%= image_tag("killa_killed.jpg", class: "thumbnail image-row") %>
+      </div>
+      <div class="panel-footer dl-horizontal">
+        <div class="row">
+          <div class="col-md-6">
+            <button class="btn btn-success center-block">Agree</button>
+          </div>
+          <div class="col-md-6">
+            <button class="btn btn-danger">Disagree</button>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

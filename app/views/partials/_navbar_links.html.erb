@@ -1,0 +1,84 @@
+<ul class="nav navbar-nav">
+  <% if current_user %>
+  <li>
+    <button class="btn btn-default navbar-btn">
+      <%= link_to "New chatroom", new_chatroom_path %>
+    </button>&nbsp;
+  </li>
+  <li>
+    <button class="btn btn-default navbar-btn">
+      <%= link_to "News", new_chatroom_path %>
+    </button>&nbsp;
+  </li>
+  <li>
+    <button class="btn btn-default navbar-btn">
+      <%= link_to "Sport", new_chatroom_path %>
+    </button>&nbsp;
+  </li>
+  <li>
+    <button class="btn btn-default navbar-btn">
+      <%= link_to "Business", new_chatroom_path %>
+    </button>&nbsp;
+  </li>
+  <li>
+    <button class="btn btn-default navbar-btn">
+      <%= link_to "World", new_chatroom_path %>
+    </button>&nbsp;
+  </li>
+  <li>
+    <button class="btn btn-default navbar-btn">
+      <%= link_to "Politics", new_chatroom_path %>
+    </button>&nbsp;
+  </li>
+  <li>
+    <button class="btn btn-default navbar-btn">
+      <%= link_to "Comment", new_chatroom_path %>
+    </button>&nbsp;
+  </li>
+  <li>
+    <button class="btn btn-default navbar-btn">
+      <%= link_to "Property", new_chatroom_path %>
+    </button>&nbsp;
+  </li>
+  <li>
+    <button class="btn btn-default navbar-btn">
+      <%= link_to "Entertainment", new_chatroom_path %>
+    </button>&nbsp;
+  </li>
+  <li>
+    <button class="btn btn-default navbar-btn">
+      <%= link_to "Lifestyle", new_chatroom_path %>
+    </button>&nbsp;
+  </li>
+  <li>
+    <button class="btn btn-default navbar-btn">
+      <%= link_to "Travel", new_chatroom_path %>
+    </button>&nbsp;
+  </li>
+
+  <% end %>
+
+</ul>
+
+<ul class="nav navbar-nav navbar-right">
+  <% if current_user %>
+
+   <li>
+     <button class="btn btn-default navbar-btn">
+       <%= link_to "Log Out", logout_path, method: "delete" %>
+    </button>
+   </li>
+
+  <% else %>
+  <button type="button" class="btn btn-default navbar-btn">
+   <li>
+    <%= link_to "Sign Up", signup_path, class: "btn navbar-btn", type: "button" %>
+   </li>
+  </button>
+  <button type="button" class="btn btn-default navbar-btn">
+   <li>
+    <%= link_to "Log In", login_path, class: "btn navbar-btn", type: "button" %>
+   </li>
+  </button>
+  <% end %>
+</ul>
