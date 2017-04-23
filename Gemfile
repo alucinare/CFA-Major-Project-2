@@ -40,6 +40,8 @@ gem 'json'
 
 gem 'simple_form'
 
+gem 'devise'
+
 
 #guard rspec gem
 

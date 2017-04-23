@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  devise_for :userpws
   root "welcome#about"
 
   get '/contact', to: "contacts#form"
