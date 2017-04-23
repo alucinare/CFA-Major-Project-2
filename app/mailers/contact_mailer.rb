@@ -7,7 +7,7 @@ class ContactMailer < ApplicationMailer
      @email = email
      @message = message
 
-     mail(to: 'alucinare@gmail.com', subject: 'New message from website') do |format|
+     mail(to: 'alucinare@gmail.com', subject: 'New message from website.') do |format|
          format.html { render 'contact_mailer' }
          format.text { render 'contact_mailer' }
       end

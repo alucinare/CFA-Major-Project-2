@@ -40,6 +40,7 @@ gem 'json'
 
 gem 'simple_form'
 
+gem 'link_thumbnailer'
 
 #guard rspec gem
 
