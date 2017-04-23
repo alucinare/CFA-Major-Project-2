@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
-  get 'registrations/new'
 
   root "welcome#about"
+
+  get '/contact', to: "contacts#form"
+  post '/contact', to: "contacts#mail"
+
+  get 'registrations/new'
 
   # post 'home/action'
 

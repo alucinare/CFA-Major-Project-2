@@ -38,10 +38,8 @@ gem 'bootstrap-sass'
 
 gem 'json'
 
+gem 'simple_form'
 
-
-# gem 'materialize-sass'
-# gem 'material_icons'
 
 #guard rspec gem
 
