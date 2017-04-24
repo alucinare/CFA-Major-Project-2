@@ -44,8 +44,12 @@ gem 'link_thumbnailer'
 
 gem 'carrierwave'
 
-#guard rspec gem
+group :test do
 
+  gem 'capybara'
+  gem 'guard-rspec'
+  gem 'launchy'
+end
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -60,7 +64,6 @@ group :development, :test do
   gem 'pry'
   # https://github.com/pry/pry
   gem 'faker'
-  # https://github.com/stympy/faker
 end
 
 group :development do
