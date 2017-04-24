@@ -44,6 +44,8 @@ gem 'link_thumbnailer'
 
 gem 'carrierwave'
 
+gem 'bcrypt', :require => 'bcrypt' 
+
 group :test do
 
   gem 'capybara'
