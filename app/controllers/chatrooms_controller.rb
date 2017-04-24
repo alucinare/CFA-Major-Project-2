@@ -58,11 +58,14 @@ class ChatroomsController < ApplicationController
 
   def show
     @object = LinkThumbnailer.generate('http://www.smh.com.au/federal-politics/political-opinion/north-korean-threats-will-leave-alliance-countries-little-choice-20170423-gvqpxh.html')
-    
-    @message = Message.new
 
-    @connect = Connect.find_by(params[:chatroom_id])
+    @message = Message.new
+    chatroom = Chatroom.find_by(slug: params[:slug])
+
+    @connect = Connect.where("chatroom_id = ? AND user_id = ?", chatroom.id, current_user)
+    puts "/////////"
     puts @connect.inspect
+    puts "////////"
     @user = current_user
   end
 

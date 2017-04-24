@@ -78,3 +78,10 @@ Inside your views, use the 'simple_form_for' with one of the Bootstrap form
   classes, '.form-horizontal' or '.form-inline', as the following:
 
     = simple_form_for(@user, html: { class: 'form-horizontal' }) do |form|
+
+FROM _messages
+<% if current_user.connects[0].article == "Agree" %>
+  <p><strong><%=message.user.username%></strong>(<span class="agree"><%=current_user.connects[0].article%></span>):  <%=message.content%></p>
+<% else %>
+  <p><strong><%=message.user.username%></strong>(<span class="disagree"><%=current_user.connects[0].article%></span>):  <%=message.content%></p>
+<% end %>

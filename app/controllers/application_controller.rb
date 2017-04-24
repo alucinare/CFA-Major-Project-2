@@ -9,6 +9,8 @@ class ApplicationController < ActionController::Base
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
 
+  # ||= 	A ||=B assigns B to A iff A is nil or false
+
   def logged_in?
     !!current_user
   end

@@ -13,13 +13,15 @@ class MessagesController < ApplicationController
     puts connect.inspect
     puts "///////////////////"
     puts current_user.connects[0].inspect
-    connect = current_user.connects[0]
+    @connect = Connect.where("chatroom_id = ? AND user_id = ?", message.chatroom_id, current_user)
+
+    # connect = current_user.connects[0]
     # connect = current_user.connects[0].article
     if message.save #&& current_user.username == "TestNotSee" - this will hide the message before it's sent through the action cable, but it will show if the page is reloaded.
       ActionCable.server.broadcast 'messages',
         message: message.content,
         user: message.user.username,
-        connect: connect.article
+        connect: @connect[0].article
       head :ok
     end
   end

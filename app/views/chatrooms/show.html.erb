@@ -20,7 +20,7 @@
       <% if @chatroom.messages.any? %>
       <!--  the JS will not work without the messages ID-->
         <div class="panel-body" id="messages">
-          <%= render partial: 'messages/message', collection: @chatroom.messages, locals: {connect: @connect} %>
+          <%= render partial: 'messages/message', collection: @chatroom.messages %>
         </div>
       <%else%>
         <div class="panel-body hidden" id="messages">
