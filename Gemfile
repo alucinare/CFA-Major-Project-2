@@ -42,6 +42,8 @@ gem 'simple_form'
 
 gem 'link_thumbnailer'
 
+gem 'carrierwave'
+
 #guard rspec gem
 
 
