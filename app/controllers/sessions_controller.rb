@@ -7,12 +7,9 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = User.authenticate("TestPassword1","654321")
+    user = user_params
+    user = User.authenticate(user[:username], user[:login_password])
 
-    puts "/////"
-    puts user.inspect
-    puts "/////"
-    # user = User.find_by(user_params)
     if user
       session[:user_id] = user.id
       redirect_to chatrooms_path
@@ -29,6 +26,6 @@ class SessionsController < ApplicationController
   private
 
     def user_params
-      params.require(:user).permit(:username, :password)
+      params.require(:user).permit(:username, :login_password)
     end
 end

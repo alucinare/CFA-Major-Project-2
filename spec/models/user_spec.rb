@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe User do
-  
+
   it "has a valid factory" do
     user = FactoryGirl.create(:user)
     expect(user).to be_valid
@@ -15,6 +15,11 @@ describe User do
   it "returns a user's username as a string" do
     user = FactoryGirl.build(:user)
     expect(user).to be_valid
+  end
+
+  it "should not be valid without a password" do
+    user = FactoryGirl.build(:user, encrypted_password: nil)
+    expect(user).to_not be_valid
   end
 
   it "is invalid if the username is a duplicate" do
