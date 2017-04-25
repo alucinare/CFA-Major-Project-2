@@ -7,6 +7,11 @@ class ChatroomsController < ApplicationController
   end
 
   def new
+    @articles_data = [["Aaron Hernandez was no innocent bystander in a bloodstained life", "http://www.smh.com.au/content/dam/images/z/r/5/5/s/image.related.articleLeadwide.620x349.gvo7nw.png/1492671186262.jpg", "Innocent bystander?"],
+    ["North Korean threats will leave alliance countries little choice", "http://www.smh.com.au/content/dam/images/g/v/l/h/y/1/image.related.articleLeadwide.620x349.gvqpxh.png/1493014733491.jpg", "North Korea's empty threats?"],
+    ["Global fugitive to be extradited over people smuggling tragedy", "http://www.smh.com.au/content/dam/images/g/v/r/s/u/4/image.related.articleLeadwide.620x349.gvpfxt.png/1493106750323.jpg", "Global fugitive tragedy?"],
+    ["Interest rates still lower than a year ago despite recent hikes: Data", "http://www.smh.com.au/content/dam/images/g/l/o/o/w/j/image.related.articleLeadwide.620x349.gvr9vv.png/1493101449228.jpg", "Interest rates low?"]]
+
     @connect = Connect.new
     if request.referrer.split("/").last == "chatrooms"
       flash[:notice] = nil
@@ -56,6 +61,7 @@ class ChatroomsController < ApplicationController
     redirect_to chatroom
   end
 
+  # Can scrape from news website using gems such as Nokogiri
   def show
     @object = LinkThumbnailer.generate('http://www.smh.com.au/sport/us-sports/aaron-hernandez-was-no-innocent-bystander-in-a-bloodstained-life-20170419-gvo7nw.html')
 
