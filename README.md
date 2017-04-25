@@ -1,24 +1,28 @@
-# README
+# Engaugeus
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+An
 
-Things you may want to cover:
+## About the Project
 
-* Ruby version
 
-* System dependencies
+## Requirements
 
-* Configuration
+- Ruby 2.0 or later.
+-
 
-* Database creation
+## Installation
 
-* Database initialization
+Add this line to your application's Gemfile:
 
-* How to run the test suite
+  `gems to add`
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+### Extra stuff to do for program to run
 
-* ...
+
+## Usage
+
+In the terminal:
+
+
+## Known Bugs
