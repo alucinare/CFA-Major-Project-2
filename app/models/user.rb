@@ -10,26 +10,39 @@ class User < ApplicationRecord
   has_many :chatrooms, through: :messages
   has_many :connects, dependent: :destroy
 
+  EMAIL_REGEX = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i
   validates :username, presence: true, uniqueness: true
   validates :password, presence: true
   validates_length_of :password, in: 6..20, on: :create
 
+  attr_accessor :username, :password
 
-  # attr_accessible :username, :password, :password_confirmation
+  def self.authenticate(username="", login_password="")
+
+    puts username.inspect
+    puts login_password.inspect
 
 
-  # def self.authenticate(login_password="")
-  #
-  #   if user && user.match_password(login_password)
-  #     return user
-  #   else
-  #     return false
-  #   end
-  # end
-  #
-  # def match_password(login_password="")
-  #   encrypted_password == BCrypt::Engine.hash_secret(login_password, salt)
-  # end
+    user = User.find_by_username(username)
+    puts user.inspect
+
+
+    puts "username inspect 2"
+    puts username.inspect
+
+    if user && user.match_password(login_password)
+      puts "in user && user.match"
+      return user
+    else
+      puts "in else for user and user.match"
+      return false
+    end
+  end
+
+  def match_password(login_password="")
+    puts "in match"
+    encrypted_password == BCrypt::Engine.hash_secret(login_password, salt)
+  end
 
 
 # these are calls from within the model
