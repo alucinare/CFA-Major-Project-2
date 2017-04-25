@@ -10,6 +10,10 @@
         <span class="input-group-addon">@</span>
           <%= f.text_field :username, class: "form-control"%>
       </div>
+      <%=f.label :password%>
+      <div class="input-group">
+          <%= f.password_field :password, class: "form-control"%>
+      </div>
 
       <div class="actions">
         <%= f.submit "sign up", class: "btn btn-primary" %>
