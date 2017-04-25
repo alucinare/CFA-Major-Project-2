@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  rolify
 
   attr_accessor :password
 
@@ -9,13 +10,23 @@ class User < ApplicationRecord
   has_many :messages, dependent: :destroy
   has_many :chatrooms, through: :messages
   has_many :connects, dependent: :destroy
+  has_one :profile, dependent: :destroy
 
-  EMAIL_REGEX = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i
+  # EMAIL_REGEX = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i
   validates :username, presence: true, uniqueness: true
   validates :password, presence: true
   validates_length_of :password, in: 6..20, on: :create
 
-  attr_accessor :username, :password
+  after_create :assign_default_role
+
+
+  def assign_default_role
+    self.add_role(:member) if self.roles.blank?
+  end
+
+  def admin?
+    has_role?(:admin)
+  end
 
   def self.authenticate(username="", login_password="")
 
@@ -44,8 +55,6 @@ class User < ApplicationRecord
     encrypted_password == BCrypt::Engine.hash_secret(login_password, salt)
   end
 
-
-# these are calls from within the model
   def encrypt_password
     unless password.blank?
       self.salt = BCrypt::Engine.generate_salt

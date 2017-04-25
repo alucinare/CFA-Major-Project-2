@@ -1,4 +1,5 @@
 class MessagesController < ApplicationController
+  skip_after_action :verify_authorized
 
   def create
     message = Message.new(message_params)

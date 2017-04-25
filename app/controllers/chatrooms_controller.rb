@@ -1,5 +1,6 @@
 class ChatroomsController < ApplicationController
   before_action :set_chatroom, only: [:show, :edit, :update]
+  skip_after_action :verify_authorized
 
   def index
     @chatroom = Chatroom.new

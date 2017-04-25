@@ -44,7 +44,11 @@ gem 'link_thumbnailer'
 
 gem 'carrierwave'
 
-gem 'bcrypt', :require => 'bcrypt' 
+gem 'bcrypt', :require => 'bcrypt'
+
+gem "pundit"
+
+gem "rolify"
 
 group :test do
 
