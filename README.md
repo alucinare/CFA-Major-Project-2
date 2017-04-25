@@ -117,7 +117,7 @@ User story creation was done using Trello. The full Trello board can be accessed
 
 Below is an image of some the user stories.
 
-![alt tag]()
+![alt tag](https://github.com/alucinare/CFA-Major-Project-2/blob/master/images/project_user_stories.png)
 
 #### User Flow Diagrams
 
