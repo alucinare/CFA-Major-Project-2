@@ -13,11 +13,13 @@
   <body>
 
   <div class="container">
-  <%= render partial: 'partials/header' %>
-  <%= render partial: 'partials/navbar' %>
+    <%= render partial: 'partials/header' %>
+    <%= render partial: 'partials/navbar' %>
 
 
     <%= yield %>
+
+    <%= render partial: 'partials/footer' %>
   </div>
   </body>
 </html>

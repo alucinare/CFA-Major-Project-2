@@ -1,4 +1,5 @@
 class ContactsController < ApplicationController
+  skip_after_action :verify_authorized
 
   def form
   end
@@ -17,10 +18,5 @@ class ContactsController < ApplicationController
         redirect_to '/contact'
       end
     end
-
-    @contact = params[:contact]
-
-    puts @contact.inspect
-
   end
 end

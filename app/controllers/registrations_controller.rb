@@ -1,5 +1,6 @@
 class RegistrationsController < ApplicationController
   skip_before_action :authenticate_user!
+  skip_after_action :verify_authorized
 
   def new
     @user = User.new
@@ -9,7 +10,7 @@ class RegistrationsController < ApplicationController
     user = User.new(user_params)
     if user.save
       session[:user_id] = user.id
-      redirect_to chatrooms_path
+      redirect_to new_chatroom_path
     else
       redirect_to signup_path, flash[:notice] =  user.errors.messages
     end
