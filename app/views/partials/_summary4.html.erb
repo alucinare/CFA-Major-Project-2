@@ -1,0 +1,12 @@
+<div class="panel panel-default bootcards-media">
+  <div class="panel-heading">
+    <h5><%= @summary4.title %></h5>
+  </div>
+  <div class="panel-body">
+       <%= image_tag @summary4.images.first.src.to_s, class: "thumbnail image-row" %>
+    </a>
+  </div>
+  <div class="panel-footer dl-horizontal">
+    <%= @summary4.description %>
+  </div>
+</div>

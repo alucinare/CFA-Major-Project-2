@@ -3,7 +3,6 @@ class ChatroomsController < ApplicationController
   skip_after_action :verify_authorized
 
   def index
-    @chatroom = Chatroom.new
     @chatrooms = Chatroom.all
   end
 
@@ -19,8 +18,8 @@ class ChatroomsController < ApplicationController
   end
 
   def create
-    @chatroom = Chatroom.new#(chatroom_params)
-    @chatroom.topic = params[:topic] # I don't really need this anymore because I put a form in the new view instead of the buttons. Turns out I do need this because 2 submit buttons will not work for an agree and disagree value.
+    @chatroom = Chatroom.new
+    @chatroom.topic = params[:topic]
     if_saved = @chatroom.save
 
     chatroom_obj = Chatroom.where(:topic => params[:topic])
@@ -38,7 +37,7 @@ class ChatroomsController < ApplicationController
         format.html { redirect_to @chatroom }
         format.js
       end
-    elsif @chatroom.topic == topic #@connect.save && @connect.topic == chatroom_obj[0].topic
+    elsif @chatroom.topic == topic
       respond_to do |format|
         format.html { redirect_to chatroom_path(chatroom_obj[0].slug) }
         format.js
@@ -58,15 +57,18 @@ class ChatroomsController < ApplicationController
   end
 
   def show
-    @object = LinkThumbnailer.generate('http://www.smh.com.au/federal-politics/political-opinion/north-korean-threats-will-leave-alliance-countries-little-choice-20170423-gvqpxh.html')
+    @object = LinkThumbnailer.generate('http://www.smh.com.au/sport/us-sports/aaron-hernandez-was-no-innocent-bystander-in-a-bloodstained-life-20170419-gvo7nw.html')
+
+    @summary2 = LinkThumbnailer.generate('http://www.smh.com.au/federal-politics/political-opinion/north-korean-threats-will-leave-alliance-countries-little-choice-20170423-gvqpxh.html')
+
+    @summary3 = LinkThumbnailer.generate('http://www.smh.com.au/nsw/global-fugitive-to-be-extradited-over-people-smuggling-tragedy-after-serving-nsw-jail-term-20170421-gvpfxt.html')
+
+    @summary4 = LinkThumbnailer.generate('http://www.smh.com.au/business/banking-and-finance/interest-rates-still-lower-than-a-year-ago-despite-recent-hikes-data-20170424-gvr9vv.html')
 
     @message = Message.new
     chatroom = Chatroom.find_by(slug: params[:slug])
 
     @connect = Connect.where("chatroom_id = ? AND user_id = ?", chatroom.id, current_user)
-    puts "/////////"
-    puts @connect.inspect
-    puts "////////"
     @user = current_user
   end
 

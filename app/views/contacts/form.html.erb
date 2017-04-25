@@ -1,18 +1,24 @@
-<div class="col-md-6">
+<div class="jumbotron">
+  <div class="container">
+    <div class="col-md-8 col-md-offset-2">
 
-  <% if flash[:notice] %>
-      <div class="notice"><%= flash[:notice] %></div>
-    <% elsif flash[:warning] %>
-      <div class="alert alert-danger"><%= flash[:warning] %></div>
-    <% else %>
-  <% end %>
+      <% if flash[:notice] %>
+          <div class="notice"><%= flash[:notice] %></div>
+        <% elsif flash[:warning] %>
+          <div class="alert alert-danger"><%= flash[:warning] %></div>
+        <% else %>
+      <% end %>
+      
+    <div class="container text-center">
+      <h2>Contact Daily News</h2>
+    </div>
 
-<h1>Contact Us</h1>
+    <%= simple_form_for :contact do |f| %>
+        <%= f.input :email, placeholder: 'Type email here' %>
+        <%= f.input :message, placeholder: 'Type message here', :as => :text %>
+        <%= f.button :submit, "Send" %>
+    <% end %>
 
-<%= simple_form_for :contact do |f| %>
-    <%= f.input :email, placeholder: 'type email here' %>
-    <%= f.input :message, placeholder: 'type message here', :as => :text %>
-    <%= f.button :submit, "Send" %>
-<% end %>
-
+    </div>
+  </div>
 </div>

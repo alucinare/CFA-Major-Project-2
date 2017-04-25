@@ -1,34 +1,33 @@
-<div class="row">
-  <div class="col-md-6">
-    <div class="panel panel-default bootcards-media">
-      <div class="panel-heading">
-        <h5><%= @object.title %></h5>
-      </div>
-      <div class="panel-body">
-           <%= image_tag @object.images.first.src.to_s, class: "thumbnail image-row" %>
-        </a>
-      </div>
-      <div class="panel-footer dl-horizontal">
-        <%= @object.description %>
-      </div>
+<div class="jumbotron">
+  <div class="row">
+    <div class="col-md-6">
+      <% if @chatroom.topic == "Innocent bystander?" %>
+        <%= render 'partials/summary1' %>
+      <% elsif @chatroom.topic == "North Korea's empty threats?" %>
+        <%= render 'partials/summary2' %>
+      <% elsif @chatroom.topic == "Global fugitive tragedy?" %>
+        <%= render 'partials/summary3' %>
+      <% elsif @chatroom.topic == "Interest rates low?" %>
+        <%= render 'partials/summary4' %>
+      <% end %>
     </div>
-  </div>
-  <div class="col-md-6">
-    <h1><%= @chatroom.topic %></h1>
+    <div class="col-md-6">
+      <h2><%= @chatroom.topic %></h2>
 
-    <div class="panel panel-default">
-      <% if @chatroom.messages.any? %>
-      <!--  the JS will not work without the messages ID-->
-        <div class="panel-body" id="messages">
-          <%= render partial: 'messages/message', collection: @chatroom.messages %>
-        </div>
-      <%else%>
-        <div class="panel-body hidden" id="messages">
-        </div>
-      <%end%>
+      <div class="panel panel-default">
+        <% if @chatroom.messages.any? %>
+        <!--  the JS will not work without the messages ID-->
+          <div class="panel-body" id="messages">
+            <%= render partial: 'messages/message', collection: @chatroom.messages %>
+          </div>
+        <%else%>
+          <div class="panel-body hidden" id="messages">
+          </div>
+        <%end%>
+      </div>
+
+
+      <%= render partial: 'messages/message_form', locals: {message: @message, chatroom: @chatroom, connect: @connect}%>
     </div>
-
-
-    <%= render partial: 'messages/message_form', locals: {message: @message, chatroom: @chatroom, connect: @connect}%>
   </div>
 </div>

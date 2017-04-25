@@ -1,5 +1,4 @@
 <ul class="nav navbar-nav">
-  <% if logged_in? %>
   <li>
     <button class="btn btn-default navbar-btn">
       <%= link_to "News", new_chatroom_path %>
@@ -40,9 +39,10 @@
       <%= link_to "Email Daily News", contact_path %>
     </button>&nbsp;
   </li>
+  <% if logged_in? %>
   <li>
     <button class="btn btn-default navbar-btn">
-      <%= link_to "Profile", new_profile_path %>
+      <%= link_to "Profiles", profiles_path %>
     </button>&nbsp;
   </li>
    <li>
@@ -56,12 +56,12 @@
     </button>
    </li>
   <% else %>
-  <button type="button" class="btn btn-default navbar-btn">
+  <button class="btn btn-default navbar-btn">
    <li>
     <%= link_to "Sign Up", signup_path, class: "btn navbar-btn", type: "button" %>
    </li>
   </button>
-  <button type="button" class="btn btn-default navbar-btn">
+  <button class="btn btn-default navbar-btn">
    <li>
     <%= link_to "Log In", login_path, class: "btn navbar-btn", type: "button" %>
    </li>

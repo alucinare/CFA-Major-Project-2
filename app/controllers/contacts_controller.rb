@@ -18,10 +18,5 @@ class ContactsController < ApplicationController
         redirect_to '/contact'
       end
     end
-
-    @contact = params[:contact]
-
-    puts @contact.inspect
-
   end
 end
