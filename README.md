@@ -1,3 +1,5 @@
+![alt tag](https://github.com/alucinare/CFA-Major-Project-2/blob/master/images/project_coder_factory.jpeg)
+
 # Engaugeus
 
 An experimental application that is built around the idea of increasing engagement of a news website's readership by creating a chatroom based off of the simple idea of whether they agree or disagree with an article.
@@ -117,7 +119,7 @@ User story creation was done using Trello. The full Trello board can be accessed
 
 Below is an image of some the user stories.
 
-![alt tag]()
+![alt tag](https://github.com/alucinare/CFA-Major-Project-2/blob/master/images/project_user_stories.png)
 
 #### User Flow Diagrams
 
@@ -125,11 +127,11 @@ In the idea implementation the news readers starts on the front page of the news
 
 The implementation to demonstrate the idea was a agree and disagree button that takes the news reader to a chat room with all the people who pressed agree or disagree. Alongside each participant is an agree and disagree tag.
 
-![alt tag]()
+![alt tag](https://github.com/alucinare/CFA-Major-Project-2/blob/master/images/project_Overview-future-iteration.png)
 
 This is the first iteration of the project.
 
-![alt tag]()
+![alt tag](https://github.com/alucinare/CFA-Major-Project-2/blob/master/images/project_first_iteration.png)
 
 #### Entity Relationship Diagram
 
@@ -139,7 +141,7 @@ The Connect model gives the functionality of whether the user agrees or disagree
 
 ERD
 
-![alt tag]()
+![alt tag](https://github.com/alucinare/CFA-Major-Project-2/blob/master/images/project_ERD.png)
 
 ## Development
 
@@ -149,7 +151,7 @@ To implement the base features of the project it would've cost $33,992.
 
 Trello board showing the costs and what factors were involved to calculate that cost.
 
-![alt tag]()
+![alt tag](https://github.com/alucinare/CFA-Major-Project-2/blob/master/images/project_costing.png)
 
 #### Trello and Agile Methodology
 
@@ -161,7 +163,7 @@ Sometimes, however, I spent longer on a feature than expected due to some confli
 
 A screenshot of Trello board with other lists.
 
-![alt tag]()
+![alt tag](https://github.com/alucinare/CFA-Major-Project-2/blob/master/images/project_trello_agile.png)
 
 #### Development Process
 
@@ -187,7 +189,7 @@ Github was an essential tool in developing this project. I frequently committed 
 
 A screenshot of the github branches created and merged
 
-![alt tag]()
+![alt tag](https://github.com/alucinare/CFA-Major-Project-2/blob/master/images/project_github.png)
 
 I asked a fellow student to perform a review of my code. We added each other as collaboraters to each others repository and created a new branch called review. This allowed us to change and comment on the code if necessary without altering the master branch.
 
@@ -195,13 +197,13 @@ My code reviewer refactored to my code to show me a better way of implementing a
 
 A screenshot of the branch created by my code reviewer.
 
-![alt tag]()
+![alt tag](https://github.com/alucinare/CFA-Major-Project-2/blob/master/images/project_code_review.png)
 
 I used the code quality tool Code Climate to analyse the quality of my code and make know potential bugs.
 
 A screenshot of the Code Climate dashboard showing the repository status.
 
-![alt tag]()
+![alt tag](https://github.com/alucinare/CFA-Major-Project-2/blob/master/images/project_codequality.png)
 
 ## Future
 
