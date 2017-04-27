@@ -7,6 +7,7 @@ class ChatroomsController < ApplicationController
   end
 
   def new
+    @profile = current_user.profile
     @connect = Connect.new
     if request.referrer.split("/").last == "chatrooms"
       flash[:notice] = nil

@@ -62,8 +62,8 @@ Rails.application.configure do
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
-  # Real time chat function
-  config.action_cable.url = "ws://localhost:3000/cable"
+  # Real time chat function - but is not necessary, only if default is changed.
+  # config.action_cable.url = "ws://localhost:3000/cable"
 
   # mailgun I change this for the config
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }

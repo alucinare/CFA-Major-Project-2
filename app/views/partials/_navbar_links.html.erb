@@ -6,7 +6,7 @@
   </li>
   <li>
     <button class="btn btn-default navbar-btn">
-      <%= link_to "Engaugements", chatrooms_path %>
+      <%= link_to "Sport", new_chatroom_path %>
     </button>&nbsp;
   </li>
   <li>
@@ -36,26 +36,43 @@
   </li>
   <li>
     <button class="btn btn-default navbar-btn">
-      <%= link_to "Email Daily News", contact_path %>
+      <%= link_to "Lifestyle", new_chatroom_path %>
+    </button>&nbsp;
+  </li>
+  <li>
+    <button class="btn btn-default navbar-btn">
+      <%= link_to "Contact", contact_path %>
     </button>&nbsp;
   </li>
   <% if logged_in? %>
   <li>
-    <button class="btn btn-default navbar-btn">
-      <%= link_to "Profiles", profiles_path %>
+    <button type="button" class="btn btn-default navbar-btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Engaugements <span class="caret"></span>
     </button>&nbsp;
-  </li>
-   <li>
-     <button class="btn btn-default navbar-btn">
-       <%= link_to "Log Out", logout_path, method: "delete" %>
-    </button>&nbsp;
+    <ul class="dropdown-menu">
+      <li><%= link_to "Engaugements", chatrooms_path %></li>
+      <li><%= link_to "Profiles", profiles_path %></li>
+      <li><%= link_to "New Profile", new_profile_path %></li>
+      <li role="separator" class="divider"></li>
+      <li><a href="#">Future</a></li>
+    </ul>
    </li>
    <li>
      <button class="btn btn-default navbar-btn">
-       <%= current_user.username %>
-    </button>
+       <%= current_user.username %> <%= link_to "Log Out", logout_path, method: "delete" %>
+    </button>&nbsp;
    </li>
   <% else %>
+  <li>
+    <button class="btn btn-default navbar-btn">
+      <%= link_to "Entertainment", new_chatroom_path %>
+    </button>&nbsp;
+  </li>
+  <li>
+    <button class="btn btn-default navbar-btn">
+      <%= link_to "Extra", new_chatroom_path %>
+    </button>&nbsp;
+  </li>
   <button class="btn btn-default navbar-btn">
    <li>
     <%= link_to "Sign Up", signup_path %>

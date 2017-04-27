@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
   def create
     user_login = user_params
     user = User.authenticate(user_login[:username], user_login[:login_password])
-  
+
     user = User.find_by(username: user_login[:username])
 
     if user
