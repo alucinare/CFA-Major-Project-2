@@ -1,15 +1,23 @@
-<%= simple_form_for(@profile) do |f| %>
-  <%= f.error_notification %>
+<div class="jumbotron">
+  <div class="container">
+    <div class="col-md-8 col-md-offset-2">
+      <div class="container text-center">
+        <%= simple_form_for(@profile) do |f| %>
+          <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :name %>
-    <%= f.input :bio %>
-    <br>
-    <%= f.file_field :avatar, class:"button" %>
-    <!-- f.association :user %> -->
+          <div class="form-inputs">
+            <%= f.input :name %>
+            <%= f.input :bio %>
+            <br>
+            <%= f.file_field :avatar, class:"button" %>
+            <!-- f.association :user %> -->
+          </div>
+          <br>
+          <div class="form-actions">
+            <%= f.button :submit, class: "btn btn-default navbar-btn"  %>
+          </div>
+        <% end %>
+      </div>
+    </div>
   </div>
-  <br>
-  <div class="form-actions">
-    <%= f.button :submit, class: "btn btn-default navbar-btn"  %>
-  </div>
-<% end %>
+</div>
