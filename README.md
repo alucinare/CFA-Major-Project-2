@@ -9,14 +9,14 @@ The name of the application is a uniting of different words combined to convey t
 ## Overview
 
 1. [About the Project](#about-the-project)
-2. Context
-3. Problem Statement
-4. Solution Statement
-5. Getting Started
-6. Design Journey
-7. Development
-8. Future
-9. Known Bugs
+2. [Context](#context)
+3. [Problem Statement](#problem-statement)
+4. [Solution Statement](#solution-statement)
+5. [Getting Started](#getting-started)
+6. [Design Journey](#design-journey)
+7. [Development](#development)
+8. [Future](#future)
+9. [Known Bugs](#known-bugs)
 
 ## About the Project
 
@@ -29,9 +29,13 @@ The guiding aim of this project was to impress one of the three following people
 
 They represent a diverse range of interests outside of the standard two sided marketplace concept. They also represent a standard of work to which we aim to live up to. I choose journalism because of the importance it has in encouraging a social conscience by making people aware of the most pressing issues in our day and age. This acts as a catalyst for discussion.
 
+[Return to overview](#overview)
+
 ## Context
 
 Currently there’s a crisis in the tradition news publishing sector. The readership's in continual decline since the advent of and increasing use of the internet. The complete collapse is held back by a generation who didn’t grow up with the virtual space permeating almost every facet of their lives. In light of the attrition of a newspaper’s traditional readership there’s an urgency for many newspapers to fully enter the modern age. A website's a start, however, more can be done to attract modern readers familiar with the virtual space.
+
+[Return to overview](#overview)
 
 ## Problem statement
 
@@ -41,6 +45,8 @@ In particular the problem is to not only find a way to transition traditional re
 
 All the while there is a need to maintain what a newspaper traditionally does: inform people and act as a catalyst for discussion. This is where Engaugeus comes into it.
 
+[Return to overview](#overview)
+
 ## Solution statement
 
 The implementation of Engaugeus is straightforward, and intuitive. I created a simple agree and disagree button under a news article block on the front page. One of the buttons is clicked by a reader and they are taken to a chat room with other people who either agree or disagree with the article.
@@ -48,6 +54,8 @@ The implementation of Engaugeus is straightforward, and intuitive. I created a s
 In the chatroom a summary of the article is given and each user has a corresponding tag of "agree" or "disagree" next to their username. This makes it easier for participants to know who dis/agreed with the article. From here the users can engage with each other to discuss what they think/feel about the article, why they think/feel that way, and perhaps try to convince other people of their arguments.
 
 This basic functionality has been implemented, however, there is much room for growth in this model. This I will detail in the Future section.
+
+[Return to overview](#overview)
 
 ## Getting Started
 
@@ -103,6 +111,8 @@ Within the rails project, folder *Gemfile* the following gems were installed:
 | pundit | gem "pundit" | authorization system (not fully implemented) |
 | rolify    | gem 'rolify'   |  role administration (not fully implemented) |
 
+[Return to overview](#overview)
+
 ## Design Journey
 
 #### Ideation
@@ -142,6 +152,8 @@ The Connect model gives the functionality of whether the user agrees or disagree
 ERD
 
 ![alt tag](https://github.com/alucinare/CFA-Major-Project-2/blob/master/images/project_ERD.png)
+
+[Return to overview](#overview)
 
 ## Development
 
@@ -205,6 +217,8 @@ A screenshot of the Code Climate dashboard showing the repository status.
 
 ![alt tag](https://github.com/alucinare/CFA-Major-Project-2/blob/master/images/project_codequality.png)
 
+[Return to overview](#overview)
+
 ## Future
 
 There are a lot of other features that I'd like to implement on this project:
@@ -213,11 +227,15 @@ There are a lot of other features that I'd like to implement on this project:
 - Natural Language Processing: This can be a way for the news site to better understand their audience by processing the public engaugements. The will be able to derive sentiment from Googles NLP API and/or use Watson's personality insight API to get a better understanding of the readership base. This can be fed back into various analytics so as to better serve the readership base.
 - Embedded: The prototype shows a faux website. I'd like to find a way to implement this into preexisting websites to make it a seamless user experience.
 
+[Return to overview](#overview)
+
 ## Known Bugs
 
 This is a prototype to test an idea and there are a few bugs:
 - The colour of the text doesn't stay the same when the screen is refreshed. When another reader comes into the room it will be harder for them to tell who agrees or disagree. The tag still stays the same.
 - There are a few issues with the navbar on Firefox browser where the button for the link doesn't work.
+
+[Return to overview](#overview)
 
 ## To implement
 
