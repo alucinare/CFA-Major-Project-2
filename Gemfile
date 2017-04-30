@@ -50,6 +50,8 @@ gem "pundit"
 
 gem "rolify"
 
+gem 'ransack'
+
 group :test do
 
   gem 'capybara'
