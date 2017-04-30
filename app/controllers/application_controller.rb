@@ -9,6 +9,8 @@ class ApplicationController < ActionController::Base
 
     # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
+  rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
+
 
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
@@ -25,10 +27,10 @@ class ApplicationController < ActionController::Base
     redirect_to login_path unless logged_in?
   end
 
-  # private
+  private
 
   def user_not_authorized
     flash[:alert] = "You are not authorized to perform this action."
-    redirect_to(request.referrer || root_path)
+    redirect_to(request.referrer || profiles_path)
   end
 end

@@ -47,20 +47,20 @@
   <% if logged_in? %>
   <li>
     <button type="button" class="btn btn-default navbar-btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Engaugements <span class="caret"></span>
+    <%= link_to "Engaugeus", chatrooms_path %> <span class="caret"></span>
     </button>&nbsp;
     <ul class="dropdown-menu">
       <li><%= link_to "Engaugements", chatrooms_path %></li>
       <li><%= link_to "Profiles", profiles_path %></li>
       <li><%= link_to "New Profile", new_profile_path %></li>
-      <li><%= link_to "Search", messages_path %></li>
+      <li><%= link_to "Search Engauges", messages_path %></li>
       <li role="separator" class="divider"></li>
       <li><a href="#">Future</a></li>
     </ul>
    </li>
    <li>
      <button class="btn btn-default navbar-btn">
-       <%= current_user.username %> <%= link_to "Log Out", logout_path, method: "delete" %>
+       <%= link_to current_user.username, profile_path(current_user.profile) %> <%= link_to "Log Out", logout_path, method: "delete" %>
     </button>&nbsp;
    </li>
   <% else %>

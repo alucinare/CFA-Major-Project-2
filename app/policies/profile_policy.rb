@@ -8,8 +8,8 @@ class ProfilePolicy < ApplicationPolicy
 
   def update?
 # require 'pry'; binding.pry
-    if @profile.user == @user
-    end
+    @profile.user == @user
+
   end
 
   def destroy?

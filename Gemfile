@@ -52,6 +52,8 @@ gem "rolify"
 
 gem 'ransack'
 
+gem 'rails_admin', '~> 1.1.1'
+
 group :test do
 
   gem 'capybara'
