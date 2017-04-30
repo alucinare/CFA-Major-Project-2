@@ -2,9 +2,13 @@
 
 # Engaugeus
 
-An experimental application that is built around the idea of increasing engagement of a news website's readership by creating a chatroom based off of the simple idea of whether they agree or disagree with an article.
+An experimental application that is built around the idea of increasing engagement of a news website's readership by creating a chatroom based off of the simple idea of whether the reader agree's or disagree's with an article.
 
 The name of the application is a uniting of different words combined to convey the different element of the project. "Engauge" is a play on the word "engage" to show that the core of the product is the interaction between users. However, from the news sites perspective the public chat discussions can be used to gauge their audience. The addition of the word "us" is to emphasise the fact the importance of readers coming together.
+
+Logo for the application.
+
+![alt tag](https://github.com/alucinare/CFA-Major-Project-2/blob/master/images/logo_engaugeus.png)
 
 ## Overview
 
