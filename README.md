@@ -8,7 +8,7 @@ The name of the application is a uniting of different words combined to convey t
 
 ## Overview
 
-1. About the Project
+1. [About the Project](#about-the-project)
 2. Context
 3. Problem Statement
 4. Solution Statement
