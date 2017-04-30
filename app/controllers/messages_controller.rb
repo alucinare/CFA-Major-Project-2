@@ -1,6 +1,11 @@
 class MessagesController < ApplicationController
   skip_after_action :verify_authorized
 
+  def index
+    @q = Message.ransack(params[:q])
+    @messages = @q.result(distinct: true)
+  end
+
   def create
     message = Message.new(message_params)
     message.user = current_user
