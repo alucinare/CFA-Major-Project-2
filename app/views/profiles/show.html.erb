@@ -19,6 +19,10 @@
   <strong>User:</strong>
   <%= @profile.user.username %>
 </p>
-
-<%= link_to 'Edit', edit_profile_path(@profile) %> |
-<%= link_to 'Back', profiles_path %>
+<% if current_user.username == @profile.user.username %>
+  <%= link_to 'Edit', edit_profile_path(@profile) %> |
+  <%= link_to 'Destroy', @profile, method: :delete, data: { confirm: 'Are you sure?' } %> |
+  <%= link_to 'Back', profiles_path %>
+<% else %>
+  <%= link_to 'Back', profiles_path %>
+<% end %>
