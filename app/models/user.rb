@@ -30,28 +30,16 @@ class User < ApplicationRecord
 
   def self.authenticate(username="", login_password="")
 
-    puts username.inspect
-    puts login_password.inspect
-
-
     user = User.find_by_username(username)
-    puts user.inspect
-
-
-    puts "username inspect 2"
-    puts username.inspect
 
     if user && user.match_password(login_password)
-      puts "in user && user.match"
       return user
     else
-      puts "in else for user and user.match"
       return false
     end
   end
 
   def match_password(login_password="")
-    puts "in match"
     encrypted_password == BCrypt::Engine.hash_secret(login_password, salt)
   end
 

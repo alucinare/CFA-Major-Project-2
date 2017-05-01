@@ -75,4 +75,5 @@ Rails.application.configure do
     user_name:            ENV["MG_UN"],
     password:             ENV["MG_PW"],
     authentication:       'plain'  }
+
 end
