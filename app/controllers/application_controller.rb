@@ -23,8 +23,8 @@ class ApplicationController < ActionController::Base
   protected
 
   def authenticate_user!
-    flash[:notice] = {Whoops: ["To better Engauge you, please sign in or sign up below."]}
-    redirect_to login_path unless logged_in?
+
+    redirect_to login_path, flash[:notice] = {Whoops: ["To better Engauge you, please sign in or sign up below."]} unless logged_in?
   end
 
   private

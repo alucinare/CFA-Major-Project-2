@@ -207,7 +207,7 @@ Eventually, I was able to implement these core features. These were the parts th
 
 Other challenges:
 - User login: I implmented a login system without a gem as I wanted to get an understanding of how it works behind the scenes. However, this took more time than expected. It was a great learning experience. In hindsight for a project such as this I would implemented this function with a gem such as Devise. This would've given me more time to implement more sprinkles instead of focusing so much on building the doughnut. I changed from having no password to having a password. This meant I had to implement an encryption function in the User model which took longer than I expected.
-- Database migration files: I gained a better understanding of how a database works by understanding the different Active Record methods that are used before and after an object is saved. In particular I learnt alot about the process encrypting a password and how differently named params work in relation to the model logic. 
+- Database migration files: I gained a better understanding of how a database works by understanding the different Active Record methods that are used before and after an object is saved. In particular I learnt alot about the process encrypting a password and how differently named params work in relation to the model logic.
 - ERD: There were many times when I was confused about the relationship between the Connect, User, and Chatroom model. I continually changed the model because I thought it wasn't allowing me to display certain values in the change screen. However, I eventually figured out my model was working fine and it was just my limited understanding of rendering collections. This understanding of collections allowed me to display the agree and disagree tag appropriately.
 - Code Review: I found the code review section to be extremely enlightening. It was very useful to see another students code. It opened me up to new and better ways of writing code. The student I review had very clean code that showed he had a good understanding of Ruby and helped me think better about how to write code.
 
@@ -250,6 +250,8 @@ There are a lot of other features that I'd like to implement on this project:
 This is a prototype to test an idea and there are a few bugs:
 - The colour of the text doesn't stay the same when the screen is refreshed. When another reader comes into the room it will be harder for them to tell who agrees or disagree. The tag still stays the same.
 - There are a few issues with the navbar on Firefox browser where the button for the links in the navbar doesn't work.
+- When a user doesn't have a value in the connects model for the article (agree or disagree), their messages will not show up on the chatroom they are in. However, once they have a value for article it will start to show up.
+- Issue will the agree and disagree tag changing to agree when the page is refereshed. This has something to do with how the view renders the messages in the database and the article value associated with that user.
 
 [Return to overview](#overview)
 

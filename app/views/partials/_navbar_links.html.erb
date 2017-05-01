@@ -41,6 +41,11 @@
   </li>
   <li>
     <button class="btn btn-default navbar-btn">
+      <%= link_to "Entertainment", new_chatroom_path %>
+    </button>&nbsp;
+  </li>
+  <li>
+    <button class="btn btn-default navbar-btn">
       <%= link_to "Contact", contact_path %>
     </button>&nbsp;
   </li>
@@ -55,6 +60,7 @@
       <li><%= link_to "New Profile", new_profile_path %></li>
       <li><%= link_to "Search Engauges", messages_path %></li>
       <li role="separator" class="divider"></li>
+      <li><%= link_to "Admin Dashboard", rails_admin_path %></li>
       <li><a href="#">Future</a></li>
     </ul>
    </li>
@@ -64,11 +70,6 @@
     </button>&nbsp;
    </li>
   <% else %>
-  <li>
-    <button class="btn btn-default navbar-btn">
-      <%= link_to "Entertainment", new_chatroom_path %>
-    </button>&nbsp;
-  </li>
   <li>
     <button class="btn btn-default navbar-btn">
       <%= link_to "Extra", new_chatroom_path %>
