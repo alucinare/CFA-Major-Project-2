@@ -117,7 +117,11 @@ Within the rails project, folder *Gemfile* the following gems were installed:
 | factory girl    | gem 'factory_girl_rails'   |  coupled with testing   |
 | faker | gem 'faker' | data creation for tests |
 | pundit | gem "pundit" | authorization system |
+| ransack | gem 'ransack' | search functionality |
+| rails admin | gem 'rails_admin' | admin dashboard with password |
+| fog | gem 'fog' | upload to AWS functionality |
 | rolify    | gem 'rolify'   |  role administration (not fully implemented) |
+
 
 [Return to overview](#overview)
 
