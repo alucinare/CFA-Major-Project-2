@@ -2,11 +2,11 @@
 
 # Engaugeus
 
-An experimental application that is built around the idea of increasing engagement of a news website's readership by creating a chatroom based off of the simple idea of whether the reader agree's or disagree's with an article.
+An experimental application that is built around the idea of increasing engagement of a news website's readership. It does this by creating a chatroom based off of the simple idea of whether the reader agree's or disagree's with an article. In these chatroom's readers can engage with each other to share their thoughts, feelings, and opinions on the articles on a news website.
 
-The name of the application is a uniting of different words combined to convey the different element of the project. "Engauge" is a play on the word "engage" to show that the core of the product is the interaction between users. However, from the news sites perspective the public chat discussions can be used to gauge their audience. The addition of the word "us" is to emphasise the fact the importance of readers coming together.
+The name of the application brings together a variety of different words to convey the varying elements of the project. "Engauge" is a play on the word "engage" to show that the core of the product is the interaction between users. However, from the news sites perspective the public chat discussions can be used to gauge their audience. The addition of the word "us" is to emphasise the importance of readers coming together to form a community in which they can discuss articles.
 
-Logo for the application.
+Logo for the application:
 
 ![alt tag](https://github.com/alucinare/CFA-Major-Project-2/blob/master/images/logo_engaugeus.png)
 
@@ -24,40 +24,40 @@ Logo for the application.
 
 ## About the Project
 
-This is the second semester major project designed to challenge us to think beyond the idea of a two sided marketplace. Its focus is to help us integrate what we have learnt in the previous 4 weeks while doing something different.
+This is the second semester major project designed to challenge us to think beyond the idea of a two sided marketplace. Its focus is to challenge us to do something different while helping us integrate what we have learnt in the previous 4 weeks.
 
-The guiding aim of this project was to impress one of the three following people:
+The guiding aim of this project was to impress one of the three following personalities:
   - Barack Obama - politics.
   - Rupert Murdoch - journalism.
   - Bill & Melinda Gates - social causes/global development.
 
-They represent a diverse range of interests outside of the standard two sided marketplace concept. They also represent a standard of work to which we aim to live up to. I choose journalism because of the importance it has in encouraging a social conscience by making people aware of the most pressing issues in our day and age. This acts as a catalyst for discussion.
+They represent a diverse range of interests outside of the standard two sided marketplace concept. They also represent a standard of work to which we aim to live up to. I originally was interested in impressing Bill & Melinda Gates, however, eventually choose journalism. This was mainly because the idea was more enticing than any of the other ideas I came up with. Also, I think journalism is important as it encourages a social conscience by making people aware of the most pressing issues in our day and age. This acts as a catalyst for discussion.
 
 [Return to overview](#overview)
 
 ## Context
 
-Currently there’s a crisis in the tradition news publishing sector. The readership's in continual decline since the advent of and increasing use of the internet. The complete collapse is held back by a generation who didn’t grow up with the virtual space permeating almost every facet of their lives. In light of the attrition of a newspaper’s traditional readership there’s an urgency for many newspapers to fully enter the modern age. A website's a start, however, more can be done to attract modern readers familiar with the virtual space.
+Currently there’s a crisis in the tradition news publishing sector. The readership's in continual decline since the advent of and increasing use of the internet. The complete collapse is held back by a generation who didn’t grow up with the virtual space permeating almost every facet of their lives. In light of the attrition of a newspaper’s traditional readership there’s an urgency for many newspapers to fully enter the modern age. To have a website is a start, however, more can be done to attract modern readers familiar with the virtual space.
 
 [Return to overview](#overview)
 
 ## Problem statement
 
-The problem is the continual decline in readership numbers. This effects the sustainability of the newspaper as it’s readership count is be directly correlated to advertising revenue – the higher the number of readers the higher the income stream from advertising.
+Traditionlly, advertising is a newspapers bread and butter. The problem is the continual decline in readership numbers. This effects the sustainability of the newspaper as it’s readership count is be directly correlated to advertising revenue – the higher the number of readers the higher the income stream from advertising.
 
 In particular the problem is to not only find a way to transition traditional readers from paper to news site, but to attract today's tech savy readers. They demand more engagement, more socialibility, and more connection. These are requisites for traversing the virtual world.
 
-All the while there is a need to maintain what a newspaper traditionally does: inform people and act as a catalyst for discussion. This is where Engaugeus comes into it.
+All the while there is a need to maintain what a newspaper traditionally does: inform people and act as a catalyst for discussion. The solution: Engaugeus.
 
 [Return to overview](#overview)
 
 ## Solution statement
 
-The implementation of Engaugeus is straightforward, and intuitive. I created a simple agree and disagree button under a news article block on the front page. One of the buttons is clicked by a reader and they are taken to a chat room with other people who either agree or disagree with the article.
+The implementation of Engaugeus is straightforward, and intuitive. I created a simple agree and disagree button under a news article block on the front page. Either button is clicked by a reader. They are taken to a chat room with other people who either agree or disagree with the article, and therefore with themselves. Discussion ensues.
 
 In the chatroom a summary of the article is given and each user has a corresponding tag of "agree" or "disagree" next to their username. This makes it easier for participants to know who dis/agreed with the article. From here the users can engage with each other to discuss what they think/feel about the article, why they think/feel that way, and perhaps try to convince other people of their arguments.
 
-This basic functionality has been implemented, however, there is much room for growth in this model. This I will detail in the Future section.
+This basic functionality has been implemented, however, there is much room for growth in this model. This I will detail in the Future section. A mock news site has been created to give a user an idea of what it'd be like in the real world.
 
 [Return to overview](#overview)
 
@@ -66,6 +66,8 @@ This basic functionality has been implemented, however, there is much room for g
 #### Installation
 
 You can access the application through heroku: https://engaugeus.herokuapp.com
+
+Or you can downloaad the project to the local drive and run it from there:
 
 Clone the project:
 ```ruby
@@ -112,46 +114,54 @@ Within the rails project, folder *Gemfile* the following gems were installed:
 | rpsec    | gem 'rspec-rails'   |  allows testing   |
 | factory girl    | gem 'factory_girl_rails'   |  coupled with testing   |
 | faker | gem 'faker' | data creation for tests |
-| pundit | gem "pundit" | authorization system (not fully implemented) |
+| pundit | gem "pundit" | authorization system |
 | rolify    | gem 'rolify'   |  role administration (not fully implemented) |
 
 [Return to overview](#overview)
 
 ## Design Journey
 
+The design journey took me a couple of days. I think it is a very important part of a project as it helped me to get an idea of not only what is necessary for an MVP, but where the application can go. This is important as it helps inform design and functionality choices. For instance, in testing the idea the first iteration of this project involved cutting and pasting an article link into a new chatroom box. However, I quickly moved pass that to mock up a faux news site to help visualise how it'd look in practice.
+
 #### Ideation
 
 For this process I researched what each of the personalities were interested in. Personally, I was drawn to Bill & Melinda Gates. I liked what they are doing in their word and I admire what Bill Gates has achieved in the computer and software industry.
 
-From researching each of these personalities and understanding what they are interested in I brainstormed ideas based on these interests. I wrote 2-3 pages of ideas for a variety of different applications regardless of what I thought about them. They ranged an politician analysers, to an epidemic tracker.
+From researching each of these personalities and understanding what they are interested in I brainstormed ideas based on these interests. I wrote 2-3 pages of ideas for a variety of different applications regardless of what I thought about them. They ranged an politician analyser, to an epidemic tracker.
 
-None of them got me that interested. I spoke to friends about the project and a friend offered me the idea of creating a way to engage readers of an online news site by getting them to discuss an article. I thought a good way to do that was with a basic agree or disagree button under an article.
+None of them got me that interested. I spoke to friends about the project who offered me the idea of creating a way to engage readers of an online news site by getting them to discuss an article. I thought a good way to do that was with a basic agree or disagree button under an article that would take them to a chatroom in which they could discuss the article.
 
 #### User Stories
 
 User story creation was done using Trello. The full Trello board can be accessed here: https://trello.com/b/oAozr0Px/engauge-major-project-2
 
-Below is an image of some the user stories.
+Below is an image of some the user stories. Green represents user stories necessary for the MVP while yellow represents the next iteration and red future iterations. In class we used an analogy of doughnut and sprinkles with the dougnut being the green and the sprinkles being the yellow and red.
 
 ![alt tag](https://github.com/alucinare/CFA-Major-Project-2/blob/master/images/project_user_stories.png)
 
 #### User Flow Diagrams
 
-In the idea implementation the news readers starts on the front page of the news site. The can read an article by clicking on the article box. If they want to discuss that article they click on agree or disagree. This will take them to a prompt that asks if they want to be taken to a chatroom in which people agree with the article or disagree with the article. It will take then to the chatroom where they will discuss the article.
+I used Wireframe Sketcher to create the User flow models and the ERD.
 
-The implementation to demonstrate the idea was a agree and disagree button that takes the news reader to a chat room with all the people who pressed agree or disagree. Alongside each participant is an agree and disagree tag.
+In the idea implementation the news reader starts on the front page of a news site. After they read an article they can click on an agree/disagree button on the article page or on the front page underneath the article box. Either option will take them to a prompt that asks if they want to be taken to a chatroom in which people agree with the article or disagree with the article. It will take then to the chatroom where they will discuss the article.
+
+The present implementation demonstrates the core idea: a agree and disagree button that takes the news reader to a chat room with all the people who pressed agree or disagree. Alongside each participant is an agree and disagree tag to give readers clear indication who has agreed and disagreed with the article which helps facilitate discussion.
 
 ![alt tag](https://github.com/alucinare/CFA-Major-Project-2/blob/master/images/project_Overview-future-iteration.png)
 
-This is the first iteration of the project.
+The first iteration of the project.
 
 ![alt tag](https://github.com/alucinare/CFA-Major-Project-2/blob/master/images/project_first_iteration.png)
 
+User flow description.
+
+![alt tag](https://github.com/alucinare/CFA-Major-Project-2/blob/master/images/user_flow.png)
+
 #### Entity Relationship Diagram
 
-The foundation of the database is the User model with a has many belongs to relationship with the Chatroom through the Message model. The 2 sided arrows connecting Chatroom and User to Message represent this relationship. Chatroom is the model that creates the room for the readers to discuss the article and is given the name of the article as its topic.
+The foundation of the database is the User model with a has-many-belongs-to relationship with the Chatroom through the Message model and the Chatroom has the same relationship to the User through Message. The 2 sided arrows connecting Chatroom and User to Message represent this relationship. Chatroom is the model that creates the room for the readers to discuss the article and is given the name of the article as its topic.
 
-The Connect model gives the functionality of whether the user agrees or disagree with the article. This belongs to the User and Chatroom because it needs to know what User agrees with what article and what chat room to send the User.
+The Connect model gives the functionality of whether the user agrees or disagree with the article. This belongs to the User and Chatroom because it needs to know what User agrees with what article and what chat room to send the User. In an actual chatroom Connect is used to display in the view whether a User agrees or disagrees with the article.
 
 ERD
 
@@ -163,7 +173,7 @@ ERD
 
 #### Project Costs
 
-To implement the base features of the project it would've cost $33,992.
+To implement the base features of the project it would've cost $33,992. This is taking into consideration the costs of running a business, the development costs for the project, and value adding for the business.
 
 Trello board showing the costs and what factors were involved to calculate that cost.
 
@@ -171,11 +181,11 @@ Trello board showing the costs and what factors were involved to calculate that 
 
 #### Trello and Agile Methodology
 
-The use of a Trello board was key to breaking the project down into core functionality. This allowed me to decide what was the most important parts of the project to get done first and what could wait for future iterations. I believe the core product is there and it can be built upon for future iterations.
+The use of a Trello board was key to breaking the project down into core functionality. This allowed me to decide what was the most important parts of the project that needed to get done first and what could wait for a future iteration. I believe the core product is there and it can be built upon for future iterations.
 
-The agile methodology gave me a way to focus my time. It gave me a better understanding of how to allocate my time to each feature and what could take longer than other features. If I didn't know how to implement a feature I had to give it a higher score whereas features I've implemented in previous projects I gave a lower score.
+The agile methodology gave me a way to focus my time. It gave me a better understanding of how to allocate my time to each feature and what could take longer than other features. If I didn't know how to implement a feature I had to give it a higher score whereas features I've implemented in previous projects I gave a lower score. This helped me get a sense as to how long the project could take. I created more user stories than could be implemented in the project in the allotted time so as to fill out the design and to give me a trajectory of where the project could go.
 
-Sometimes, however, I spent longer on a feature than expected due to some conflicting issue with other code that I didn't foresee due to my limited experience.
+At times, however, I spent longer on a feature than expected due to some conflicting issue with other code that I didn't foresee due to my limited experience. This project gave me a better understanding as to how the agile methodology works. I think I may have under-estimated some user stories and over-estimated others. In the future I'll be able to more accurately judge user story point scoring based on my current skill level and experience.
 
 A screenshot of Trello board with other lists.
 
@@ -183,33 +193,33 @@ A screenshot of Trello board with other lists.
 
 #### Development Process
 
-The core functionality is utilises a recent addition to the Ruby on Rails stack: websockets. This is a technology that by-passes the traditional request-respond protocol which is the basis of the internet. It opens up a continuous stream between the server and the client that allows for bidirectional messaging.
+The core functionality utilises a recent addition to the Ruby on Rails stack: websockets. This is a technology that by-passes the traditional request-respond protocol. It works by opening up a continuous stream between the server and the client allowing for bidirectional messaging.
 
-The RoR implementation of this technology is called Action Cable. It opens up a WebSocket connection and then Action Cable, through Rack, manages the connections within that WebSocket. A persistent connection is maintained using a sub-URI called a channel which goes to a subscriber. Whenever a message is sent through that channel it is immediately sent out to all the subscribers of the channel. The message is displayed on the client side through jQuery. It appends messages to the previous ones. The last important feature is Redis which stores transient data and syncs them across different application instances.
+The RoR implementation of this technology is called Action Cable. It opens up a WebSocket connection and then Action Cable, through Rack, manages the connections within that WebSocket channel. A persistent connection is maintained using a sub-URI called a channel and on the client side a user subscribeds to called the subscriber. Whenever a message is sent through that channel it is immediately sent out to all the subscribers of that channel. The message is displayed on the client side through javascript. It appends messages to the previous ones. The last important feature is Redis which stores transient data and syncs them across different application instances.
 
 This was the most challenging part of the project. I was able to implement a basic chat program, however, I wanted to adjust the functions to my own specifications. This is when I ran into some difficulty because I'd never used Javascript before and this function is heavily reliant on Javascript.
 
-To implement the function to display the agree or disagree tag next to the users name I had to reverse engineer someone elses code. This required me to quickly get a very basic understanding of the syntax of Javascript. This was challenging because it after learning Ruby since the start of the course Javascript seems a mess compared to the elegance of Ruby.
+Originally, the basic chat program didn't have a scroll bar, didn't focus on the current message, or didn't have an dis/agree tag next to the users name. To implement these functions I had to reverse engineer Javascript code and give myself a crash course in Javascript. This was very challenging because we had been learning Ruby through-out the entire course and Javascript was a mess compared to the elegance of Ruby.
 
-Eventually, I was able to implement the basic feature that I wanted which was core to the functionality because it was the only way to identify who agreed or disagreed with an article. However, it cost me more time than I expected and may have prevented me from implementing other features.
+Eventually, I was able to implement these core features. These were the parts that cost me more time than I expected and may have prevented me from implementing other features that would've been good to implement. However, I felt they were important features to implement from the UX side. If the user didn't know where another user stood on the article it would've been less engaging while if the user had to continually scroll down to see their message that would've distracted them from the discussion in the chat room. Finally, keeping the display box within the screen without scrolling down when there's too many messages in the display is important for user experience as it'll let them stay focused on the discussion at hand.
 
 Other challenges:
-- User login: I implmented a login system without a gem as I wanted to get an understanding of how it works behind the scenes. However, this took more time than expected. It was a great learning experience. In hindsight for a project such as this I would implement this function with a gem such as Devise.
-- Database migration files: I gain a better understanding of how a database works by understanding the different Active Record methods that are used before and after an object is saved. In particular I learnt alot about the process encrypting a password and how differently named params work in relation to the model logic.
-- ERD: There were many times when I was confused about the relationship between the Connect and Chatroom model. I continually changed the model because I thought it wasn't allowing me to display certain values in the change screen. However, I eventually figured out my model was working fine and it was just my limited understanding of rendering collections.
+- User login: I implmented a login system without a gem as I wanted to get an understanding of how it works behind the scenes. However, this took more time than expected. It was a great learning experience. In hindsight for a project such as this I would implemented this function with a gem such as Devise. This would've given me more time to implement more sprinkles instead of focusing so much on building the doughnut. I changed from having no password to having a password. This meant I had to implement an encryption function in the User model which took longer than I expected.
+- Database migration files: I gained a better understanding of how a database works by understanding the different Active Record methods that are used before and after an object is saved. In particular I learnt alot about the process encrypting a password and how differently named params work in relation to the model logic. 
+- ERD: There were many times when I was confused about the relationship between the Connect, User, and Chatroom model. I continually changed the model because I thought it wasn't allowing me to display certain values in the change screen. However, I eventually figured out my model was working fine and it was just my limited understanding of rendering collections. This understanding of collections allowed me to display the agree and disagree tag appropriately.
 - Code Review: I found the code review section to be extremely enlightening. It was very useful to see another students code. It opened me up to new and better ways of writing code. The student I review had very clean code that showed he had a good understanding of Ruby and helped me think better about how to write code.
 
 ##### Github, Code Review, and Code Quality
 
-Github was an essential tool in developing this project. I frequently committed to Github and branched often to test features. Not all the branches were merged because the features didn't work, but when I was confident with the branch I would merge into the master.
+Github was an essential tool in developing this project. I frequently committed to Github and branched often to test features. Not all the branches were merged because the features didn't work as I wanted them to or they were not required, but when I was confident with the branch I would merge into the master.
 
 A screenshot of the github branches created and merged
 
 ![alt tag](https://github.com/alucinare/CFA-Major-Project-2/blob/master/images/project_github.png)
 
-I asked a fellow student to perform a review of my code. We added each other as collaboraters to each others repository and created a new branch called review. This allowed us to change and comment on the code if necessary without altering the master branch.
+I asked a fellow student to perform a review of my code. We added each other as collaboraters to our repository and created a new branch called review. This allowed us to change and comment on the code if necessary without altering the master branch.
 
-My code reviewer refactored to my code to show me a better way of implementing a feature. I refactored his code to made it more readable for those who haven't read it before.
+My code reviewer refactored my code to show me a better way of implementing a feature. I refactored his code to made it more readable for those who haven't read it before.
 
 A screenshot of the branch created by my code reviewer.
 
@@ -237,13 +247,11 @@ There are a lot of other features that I'd like to implement on this project:
 
 This is a prototype to test an idea and there are a few bugs:
 - The colour of the text doesn't stay the same when the screen is refreshed. When another reader comes into the room it will be harder for them to tell who agrees or disagree. The tag still stays the same.
-- There are a few issues with the navbar on Firefox browser where the button for the link doesn't work.
+- There are a few issues with the navbar on Firefox browser where the button for the links in the navbar doesn't work.
 
 [Return to overview](#overview)
 
 ## To implement
 
 This is a work in progress and I need to implement these features:
-- Admin dashboard.
-- Search function.
 - Omniauth api for social media sign in.
