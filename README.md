@@ -33,7 +33,7 @@ The guiding aim of this project was to impress one of the three following person
 
 They represent a diverse range of interests outside of the standard two sided marketplace concept. They also represent a standard of work to which we aim to live up to. I originally was interested in impressing Bill & Melinda Gates, however, eventually choose journalism. This was mainly because the idea was more enticing than any of the other ideas I came up with. Also, I think journalism is important as it encourages a social conscience by making people aware of the most pressing issues in our day and age. This acts as a catalyst for discussion.
 
-This is the slideshow for the class presentation I gave: https://github.com/alucinare/CFA-Major-Project-2/blob/master/class_presentation/engaugeus_presentation.odp
+We had to give a presentation to the class about the project. The title of my presentation was "Unemployed Archaeologist of the Future". The aim was to play on the idea that newspapers are a thing of the past and an artifact to be dug up by archaeologists of the future. I wanted to put future archaeologist out of work by speeding up the process of a news companies transition to the digital medium. This is the slideshow for the class presentation I gave: https://github.com/alucinare/CFA-Major-Project-2/blob/master/class_presentation/engaugeus_presentation.odp
 
 [Return to overview](#overview)
 
