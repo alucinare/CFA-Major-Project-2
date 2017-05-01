@@ -89,4 +89,14 @@ Rails.application.configure do
   config.web_socket_server_url = "wss://engaugeus.herokuapp.com/cable"
   config.action_cable.allowed_request_origins = ['https://engaugeus.herokuapp.com/', 'https://engaugeus.herokuapp.com/']
 
+  # mailgun I change this for the config
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address:              ENV["MAILGUN_SMTP_SERVER"],
+    port:                 ENV["MAILGUN_SMTP_PORT"],
+    user_name:            ENV["MAILGUN_SMTP_LOGIN"],
+    password:             ENV["MAILGUN_SMTP_PASSWORD"],
+    domain:               "engaugeus.herokuapp.com",
+    authentication:       'plain'  }
+
 end

@@ -40,19 +40,29 @@ gem 'json'
 
 gem 'simple_form'
 
+# summary of article
 gem 'link_thumbnailer'
 
+# photo uploading
 gem 'carrierwave'
 
+# password encryption
 gem 'bcrypt', :require => 'bcrypt'
 
+# authorization
 gem "pundit"
 
+# roles of member and admin
 gem "rolify"
 
+# search functionality
 gem 'ransack'
 
+# admin dashboard
 gem 'rails_admin', '~> 1.1.1'
+
+# uploading to AWS
+gem 'fog'
 
 group :test do
 
